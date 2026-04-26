@@ -35,27 +35,43 @@ project:
     - title: "— DAY 1: Foundations —"
       children:
         - file: chapters/ch00-prologue.md
+          title: "Prologue: The Lukos Mission Brief"
         - file: chapters/ch01-how-the-wolf-sees.md
+          title: "Ch 1: AI Foundations & Prompt Engineering — How the Wolf Sees"
         - file: chapters/ch02-field-operative.md
+          title: "Ch 2: Working with Gemini — The Field Operative"
         - file: chapters/ch03-workshop.md
+          title: "Ch 3: Google AI Studio, End to End — The Workshop"
         - file: chapters/ch04-research-partner.md
+          title: "Ch 4: NotebookLM for Lessons Learned — The Research Partner"
 
-    - title: "— DAY 2: Deployment —"
+    - title: "— DAY 2: Power Tools & the Pack —"
       children:
         - file: chapters/interlude-value-stack.md
+          title: "Interlude: The Value Creation Stack"
         - file: chapters/ch05-kennel.md
+          title: "Ch 5: Vertex AI & Enterprise Deployment — The Kennel"
         - file: chapters/ch06-the-forge.md
+          title: "Ch 6: Antigravity, Plugins & Tools — The Forge"
         - file: chapters/ch07-skill-library.md
+          title: "Ch 7: Building Your AI Skill Library — The Pack's Wisdom"
         - file: chapters/ch08-synthetic-wolfpack.md
+          title: "Ch 8: Multi-Agent Orchestration — The Synthetic Wolfpack"
         - file: chapters/ch09-firecrawl.md
+          title: "Ch 9: Live Web Access for AI Agents — FireCrawl"
         - file: chapters/ch10-edge-wolf.md
+          title: "Ch 10: Local AI & Disconnected Ops — The Edge Wolf"
         - file: chapters/ch11-operating-model.md
+          title: "Ch 11: The Lukos AI Decision Matrix — Operating Model"
 
     - title: "— Capstone & Beyond —"
       children:
         - file: chapters/ch12-capstone.md
+          title: "Ch 12: Build the Lessons Learned Co-Pilot — Capstone"
         - file: chapters/ch13-pack-goes-forward.md
+          title: "Ch 13: Responsible AI & What Comes Next"
         - file: chapters/ch14-claude-family.md
+          title: "Ch 14: The Claude Stack — The Other Wolf"
 
     - title: "Addenda"
       children:

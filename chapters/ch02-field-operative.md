@@ -1,11 +1,13 @@
 ---
-title: "Chapter 2: The Field Operative"
-subtitle: "Working with Gemini — your primary AI interface"
+title: "Working with Gemini"
+subtitle: "The Field Operative"
+short_title: "Ch 2: Working with Gemini"
 label: ch02-field-operative
 description: "Gemini.google.com — the primary Lukos AI tool. Personas, Gems, meta-prompting, WisprFlow, and the full Lukos Gem Library."
 ---
 
-# Chapter 2: The Field Operative
+# Working with Gemini
+### *The Field Operative*
 
 > *"You don't need a dozen different tools. You need one great one that you know cold."*
 
@@ -15,7 +17,7 @@ In Chapter 1 you built the mental model. Now you put it to work.
 
 Let's begin.
 
----
+
 
 ## 2.1 Meeting Gemini: The Three Things People Conflate
 
@@ -89,9 +91,9 @@ The Gemini app interface. Key areas: left sidebar (Gems, Recent Chats), main cha
 Canvas (left) renders and edits documents in real-time. Deep Research (right) runs multi-source web synthesis over several minutes — powerful for landscape assessments and capability reviews.
 ```
 
----
 
-```{admonition} ⚡ Field Upgrade: Stop Typing Your Prompts
+
+:::{admonition} ⚡ Field Upgrade: Stop Typing Your Prompts
 :class: important
 
 **[WisprFlow.ai](https://wisprflow.ai) — dictate to any AI tool, at full professional speed**
@@ -126,9 +128,9 @@ WisprFlow setup. Download from wisprflow.ai → install → set Fn+Fn hotkey →
 **OPSEC note:** WisprFlow transcribes locally by default. Review the privacy settings if your work involves sensitive terminology. The transcription does not route through external servers in the default configuration.
 
 **Result:** Prompts that used to take 10 minutes to type now take 90 seconds to speak. Adoption goes up. Output quality goes up. This is a real upgrade.
-```
+:::
 
----
+
 
 ## 2.2 Where Gemini Shines for Lukos
 
@@ -184,7 +186,7 @@ Let's be concrete. Here are the workflows where Gemini delivers the most immedia
 
 **What you get:** Five tight, professional talking points. Exactly what you'd hand a senior leader walking into a meeting.
 
----
+
 
 ## 2.3 System Prompting: Giving the AI a Persona
 
@@ -230,7 +232,7 @@ Every effective Lukos persona has five elements:
 
 Let's build the full Lukos Persona Library.
 
----
+
 
 ## 2.4 The Lukos Persona Library
 
@@ -421,7 +423,7 @@ Your tone: Precise, quantitatively rigorous, accessible. You are as
 comfortable writing a technical annex as a one-page executive brief.
 ```
 
----
+
 
 ## 2.5 Meta-Prompting: Summoning the Sages
 
@@ -481,7 +483,7 @@ Why does this work? Because the model has read every paper on prompt engineering
 
 The difference is the meta-prompt. You now have a production tool that was generated in 45 seconds.
 
----
+
 
 ## 2.6 Gems: Your Personal Pack of Specialists
 
@@ -553,7 +555,7 @@ Building a Gem in 10 steps. The process takes about 10 minutes for your first Ge
 **Step 11:** Next time you need to synthesize an AAR, click on this Gem instead of starting a new chat. It's already briefed. Just paste your content and go.
 ```
 
----
+
 
 ## 2.7 The Lukos Gem Library — What to Build First
 
@@ -627,7 +629,7 @@ CONSTRAINTS:
 - Use military-standard professional language throughout
 ```
 
----
+
 
 ### Gem 2: J7 Experimentation Note-Taker
 
@@ -675,7 +677,7 @@ CONSTRAINTS:
   statement
 ```
 
----
+
 
 ### Gem 3: FAR/DFARS Plain-English Translator
 
@@ -733,7 +735,7 @@ CONSTRAINTS:
   and recommend direct consultation with a KO
 ```
 
----
+
 
 ### Gem 4: Foreign Partner Engagement Summarizer
 
@@ -782,7 +784,7 @@ CONSTRAINTS:
 - Do not speculate about partner intentions beyond what was stated
 ```
 
----
+
 
 ### Gem 5: Training Evaluation Aggregator
 
@@ -841,7 +843,7 @@ CONSTRAINTS:
   name unless that attribution is in the original data
 ```
 
----
+
 
 ## 2.8 Sharing Gems and the OPSEC Watch-Out
 
@@ -874,7 +876,7 @@ When you share a Gem link:
 
 The Gem instructions themselves should be written so that they work with any content the user provides — not with specific sensitive content baked in.
 
----
+
 
 ## 2.9 Hands-On Labs
 
@@ -946,7 +948,7 @@ The Gem instructions themselves should be written so that they work with any con
 ✅ **Success looks like:** You have a saved Gem in your Gemini sidebar that produces professional, J7-quality outputs for your functional area. You ran it against real content and the output met or exceeded the "2-minute review" standard. You have a permanent AI team member, configured and ready.
 ```
 
----
+
 
 ### Lab 2: Build Your First Gem
 
@@ -1011,7 +1013,7 @@ The Gem instructions themselves should be written so that they work with any con
 ✅ **Success looks like:** Your Gem produces outputs that align to your organizational template without prompting. You've run three real items through it. The output quality is consistent. You have a Gem you'll actually open tomorrow morning instead of a blank chat.
 ```
 
----
+
 
 ### Lab 3: The Meta-Prompt Sprint
 
@@ -1081,7 +1083,7 @@ The Gem instructions themselves should be written so that they work with any con
 ✅ **Success looks like:** You have a document with 3 tested, production-quality prompts for your most common work tasks. You've shared at least one with a teammate who confirmed it works. This is your personal AI toolkit — the foundation of your Gem library.
 ```
 
----
+
 
 ## 2.10 Hands-On: The Meta-Prompt Sprint (Individual Exercise)
 
@@ -1113,7 +1115,7 @@ The Gem instructions themselves should be written so that they work with any con
 **The lesson:** Your most repetitive work tasks now have production-grade prompts. Save those prompts. They become the foundation of your Gem library.
 ```
 
----
+
 
 ## Field Notes
 
@@ -1161,7 +1163,7 @@ Gems get stale. Your persona and task specifications were written at one point i
 The Gems in Section 2.7 are your starting templates. They will improve through use. Document your refinements in the program's AI workflow notes.
 ```
 
----
+
 
 ## Pack Debrief
 

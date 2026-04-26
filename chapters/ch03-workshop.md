@@ -1,11 +1,13 @@
 ---
-title: "Chapter 3: The Workshop"
-subtitle: "Google AI Studio — End to End"
+title: "Google AI Studio, End to End"
+subtitle: "The Workshop"
+short_title: "Ch 3: Google AI Studio"
 label: ch03-workshop
 description: "Google AI Studio from the ground up. The knobs, the tools, the model carousel, the Build tab, and hands-on labs for Lukos analysts who want to go from experimenting to deploying."
 ---
 
-# Chapter 3: The Workshop — Google AI Studio, End to End
+# Google AI Studio, End to End
+### *The Workshop*
 
 > *"A craftsman's finest work doesn't happen in the field. It happens at the bench — where the tool is fitted, calibrated, and tested before the mission."*
 
@@ -21,7 +23,7 @@ This chapter is your orientation. By the end, you'll understand every knob and w
 
 Let's get to work.
 
----
+
 
 ## 3.1 What AI Studio Is — The Gunsmith's Bench
 
@@ -82,7 +84,7 @@ At the top of the center workspace, you'll see buttons for **"New prompt"** and 
 
 For now: click **"New prompt."** You're at the bench.
 
----
+
 
 ## 3.2 The Knobs — And What They Actually Do
 
@@ -119,7 +121,7 @@ They're also **invisible to the conversation.** The person using the tool sees o
 
 Copy this exactly into the System Instructions field when building a Lessons Learned workflow:
 
----
+
 
 *You are a Lessons Learned Analyst supporting the Lukos Group, a special operations support organization working with USSOCOM partner units. Your role is to extract, categorize, and synthesize observations from After Action Reviews (AARs), training event reports, and operational debriefs.*
 
@@ -137,7 +139,7 @@ Copy this exactly into the System Instructions field when building a Lessons Lea
 - *Recommended Actions (numbered list)*
 - *Confidence Level: [High/Medium/Low] with brief rationale*
 
----
+
 
 This system instruction does what a senior analyst would do: it sets the frame, the format, the tone, and the rigor standards before a single word of content arrives. Every output from this AI will be consistent, professional, and structured — not because you remembered to ask for it, but because it's standing orders.
 ```
@@ -222,7 +224,7 @@ Here's the honest operational guidance: **leave Top-P at its default for all Luk
 
 The only time you'd touch it: if you're building a production application and have a specific, validated reason to constrain the vocabulary pool. For everything in this book? Default. Move on.
 
----
+
 
 ## 3.3 Tools — The Game Changers
 
@@ -331,7 +333,7 @@ Example: you define a function called `query_lessons_learned_database` that sear
 
 You don't need to build this in week one. But understanding it exists changes your sense of what's possible. A Lukos AI system with Function Calling isn't just an assistant — it's an analyst with access to your full institutional knowledge base.
 
----
+
 
 ## 3.4 The Model Carousel — What's Available
 
@@ -488,7 +490,7 @@ Note: Veo outputs require review before use in official training materials. The 
 - Podcast pilots: background scoring for audio productions
 - Presentation ambiance: opening music for training events and workshops
 
----
+
 
 ## 3.5 The Build Tab — From Prompt to Prototype App
 
@@ -533,7 +535,7 @@ An **API key** is a secret string of characters — typically something like `AI
 3. Select your Google Cloud project (or create a new one)
 4. Copy the key immediately — store it in a password manager, not a text file on your desktop
 
----
+
 
 ## 3.6 Lukos Build Ideas Worth Prototyping Today
 
@@ -574,7 +576,7 @@ Each one addresses a real Lukos workflow bottleneck. Each one would take an expe
 
 **The impact:** Quarterly training analysis that took half a day becomes a 15-minute process. The narrative is consistent in format across quarters. The analyst's time is spent validating and contextualizing the output, not generating it.
 
----
+
 
 ## 3.7 Hands-On Labs
 
@@ -582,7 +584,7 @@ Every concept in this chapter becomes real through practice. The following labs 
 
 Read through the full lab instructions before starting. Tier 1 gets you comfortable. Tier 2 builds the core skill. Tier 3 is the moment the room goes quiet.
 
----
+
 
 ### Group Lab: The Knob-by-Knob Drill
 
@@ -590,7 +592,7 @@ Read through the full lab instructions before starting. Tier 1 gets you comforta
 
 *Setup: One facilitator, all participants on their own laptops. Facilitator walks through Tier 1 together, then Tier 2 and Tier 3 run simultaneously across the group with facilitator circulating.*
 
----
+
 
 #### Tier 1 — The On-Ramp *(5 minutes)*
 
@@ -622,7 +624,7 @@ Your output should:
 If the output is generic or casual in tone, check that you pasted the system instruction into the **System instructions** field (right panel), not into the prompt field itself.
 ```
 
----
+
 
 #### Tier 2 — The Core Rep *(15 minutes)*
 
@@ -663,7 +665,7 @@ You should observe:
 If outputs at 0.1 and 1.8 look identical, you may be in a cached-response state. Add a small variation to the prompt ("...in complex terrain environments") to force fresh generation.
 ```
 
----
+
 
 #### Tier 3 — The Wow Moment *(25 minutes)*
 
@@ -698,7 +700,7 @@ This is the one that changes how analysts think about their workflow.
 
 **Step 4.** In the prompt field, paste the following sanitized AAR excerpt, then add the extraction instruction below it:
 
----
+
 
 *AFTER ACTION REVIEW — EXERCISE IRON BEAR 24-3*
 *Unit: 3rd SFG (A), 1st Battalion | Location: Camp Mackall, NC | Date: 14-18 October 2024*
@@ -715,7 +717,7 @@ This is the one that changes how analysts think about their workflow.
 *Phase 4 (Exfiltration):*
 *Weather conditions deteriorated during exfiltration. The team adapted effectively, demonstrating strong small-unit leadership in dynamic conditions. One medical kit was left at the objective — discovered during post-mission accountability. No casualties or significant equipment losses otherwise.*
 
----
+
 
 > *Extract all observations from this AAR. Return them as structured JSON matching the provided schema. For each observation, identify the finding, the issue it reveals, location, unit, date, category, and a recommended action.*
 
@@ -750,7 +752,7 @@ Each observation should have all seven fields populated. The "category" field sh
 If the output is free-form text instead of JSON, verify that structured output is enabled in the right panel. Some interface versions require you to explicitly select "JSON" as the response format.
 ```
 
----
+
 
 ### Individual Lab: Build Your First AI Studio Prototype
 
@@ -758,7 +760,7 @@ If the output is free-form text instead of JSON, verify that structured output i
 
 *Setup: Individual work. Tiers build sequentially — complete each before moving to the next.*
 
----
+
 
 #### Tier 1 — Your Real Question *(5 minutes)*
 
@@ -789,7 +791,7 @@ You should see an output that:
 If the answer feels generic, add more context to your question. The more specific you are about the situation, unit type, and what decision the output supports, the better the response.
 ```
 
----
+
 
 #### Tier 2 — Grounded vs. Ungrounded *(15 minutes)*
 
@@ -814,7 +816,7 @@ The grounded output should show citation markers (usually small numbered supersc
 If the grounded and ungrounded outputs look identical with no citations, the search grounding may not have found relevant current sources for your specific question. This is normal — try a question explicitly about current events or recent publications to see the grounding effect clearly.
 ```
 
----
+
 
 #### Tier 3 — Your First Prototype App *(25 minutes)*
 
@@ -852,7 +854,7 @@ The prototype may not be perfect — Build tab outputs are intentionally rapid p
 **Next step after this lab:** If the prototype shows promise, your next move is to refine the system instruction, test edge cases with different AAR types, and show it to the team. The Build tab creates a shareable link — click "Share" to distribute the prototype to colleagues for testing.
 ```
 
----
+
 
 ```{figure} ../images/ch03-aar-pipeline.png
 :alt: Full AAR-to-structured-data pipeline flowchart from raw document through AI Studio to Google Sheets database
@@ -861,7 +863,7 @@ The prototype may not be perfect — Build tab outputs are intentionally rapid p
 **Figure 3.14 — The Full Pipeline.** From raw AAR document to structured database entries. Each step is executable today with the tools covered in this chapter. This is what operational AI integration looks like — not replacing analysts, but removing the manual bottleneck from the workflow.
 ```
 
----
+
 
 ## Chapter 3 Summary
 
@@ -894,7 +896,7 @@ The bench is set up. Let's inventory what you built.
 
 **The three prototype ideas** — AAR-to-structured-data, partner document translator, training trend analyzer — are not hypothetical. They are buildable today, by any person on the Lukos team who completed this chapter.
 
----
+
 
 ```{admonition} Pack Debrief
 :class: tip

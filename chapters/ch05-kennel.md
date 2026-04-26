@@ -1,11 +1,13 @@
 ---
-title: "Chapter 5: The Kennel"
-subtitle: "Vertex and the Gemini Enterprise Agent Platform — where AI goes to become mission-ready"
+title: "Vertex AI & Enterprise Deployment"
+subtitle: "The Kennel"
+short_title: "Ch 5: Vertex AI"
 label: ch05-kennel
 description: "Vertex AI / Gemini Enterprise Agent Platform: components, governance, FedRAMP, the AI Studio to Vertex promotion pattern, cost modeling, and the Lukos AAR-to-Insight architecture. For federal contractors who need production-grade AI, not just experiments."
 ---
 
-# Chapter 5: The Kennel
+# Vertex AI & Enterprise Deployment
+### *The Kennel*
 
 > *"In Special Operations, the working dog that lives in the kennel and the family pet that runs in the backyard are both dogs. But only one of them deploys."*
 
@@ -21,7 +23,7 @@ What happens when the tool you built in AI Studio is so good that the customer w
 
 That's when you need the Kennel.
 
----
+
 
 ## 5.1 What Vertex Is — And Why It Was Renamed
 
@@ -68,7 +70,7 @@ Here's what separates Vertex from the consumer tools you've been using:
 
 When your customer asks "Is this tool approved for use with our data?" — that table is the answer. Consumer tools fail on audit trail, access controls, data residency, and compliance posture. Vertex is built to pass.
 
----
+
 
 ## 5.2 The Components They Need to Know
 
@@ -199,7 +201,7 @@ In a consumer AI tool, there's one identity: you, logged in with your Google acc
 
 Together, these two components answer the customer's question: "Is your system access-controlled?" The answer is yes — at the identity level, at the perimeter level, and at the data level. That's the answer that gets through a CIO/CISO review.
 
----
+
 
 ## 5.3 The Lukos Use Cases That Belong on Vertex
 
@@ -238,7 +240,7 @@ Here's the hard line.
 
 **Prototyping before promoting.** You should *always* prototype in [AI Studio](https://aistudio.google.com) before promoting to Vertex. Build it cheap, break it cheap, refine it cheap. Then, when it works, promote it. We'll walk through exactly how in section 5.5.
 
----
+
 
 ## 5.4 The Federal Conversation — What to Verify, Not Assume
 
@@ -309,7 +311,7 @@ Google's sales team will tell you what's authorized from Google's perspective. Y
 
 Build the relationship. Know who the customer's information assurance contacts are. Know how to reach them when the authorization question comes up. And build the habit of reaching them early — before you've built the tool and before the customer is already asking to use it.
 
----
+
 
 ## 5.5 The Promotion Pattern — AI Studio to Vertex
 
@@ -412,7 +414,7 @@ Here's the specific delta for the AAR-to-OIL tool:
 
 The tool does the same thing. But everything around it is different — and every one of those differences matters when a customer's CIO/CISO is doing their review.
 
----
+
 
 ## 5.6 Sessions, Memory, and the Cost Model
 
@@ -501,7 +503,7 @@ This is not an argument that AI replaces the analyst. It's an argument that AI-a
 
 **Build this calculation with your own numbers before you propose.** Customers who understand the ROI approve the budget. Customers who only see the infrastructure cost sometimes get sticker shock at things that shouldn't cause sticker shock.
 
----
+
 
 ## 5.7 The Architecture Whiteboard
 
@@ -572,17 +574,17 @@ flowchart TD
 
 Paste that diagram into [mermaid.live](https://mermaid.live) and you'll see the full architecture rendered. That's your starting point for the group lab.
 
----
+
 
 ## Hands-On Labs
 
----
+
 
 ### Group Lab: The Architecture Whiteboard
 
 *The goal: get your team thinking like AI systems architects, not just AI users.*
 
----
+
 
 #### Tier 1 — The On-Ramp (5 minutes)
 
@@ -597,13 +599,13 @@ This is the "before Vertex" state. You're mapping what you've already built.
 
 **✅ Success looks like:** A one-paragraph description of a real AI workflow you've already built or used, with the tool, the AI action, and the output destination clearly identified.
 
----
+
 
 #### Tier 2 — The Core Rep (20 minutes)
 
 In groups of 3–4, pick one workflow from your Tier 1 answers — ideally one that the group finds most representative of Lukos work. Then answer the **Production Readiness Assessment**:
 
----
+
 
 **Production Readiness Assessment**
 *Complete this for one AI workflow before deciding where it belongs.*
@@ -645,13 +647,13 @@ _________________________________________________________________
 ☐ Vertex is required — explain why: ________________________________
 ☐ Starts on consumer, needs to promote — explain the trigger: __________
 
----
+
 
 Groups present their completed assessments. The conversation about question 4 is usually the most productive — "what happens when the AI is wrong" is the question most AI projects don't ask early enough.
 
 **✅ Success looks like:** A completed Production Readiness Assessment for one real workflow, with a clear Vertex vs. consumer tool recommendation supported by the answers to all five questions.
 
----
+
 
 #### Tier 3 — The Wow Moment (30 minutes)
 
@@ -677,13 +679,13 @@ You're going to generate a professional system architecture diagram — the kind
 
 **✅ Success looks like:** A rendered Mermaid architecture diagram of a production AI pipeline for a Lukos Lessons Learned use case, pasted into your Google Doc, with at least three of the five governance questions answered.
 
----
+
 
 ### Individual Lab: Walk One Workflow Through the Promotion Checklist
 
 *The goal: build the habit of asking the promotion questions before you build, not after.*
 
----
+
 
 #### Tier 1 (5 minutes)
 
@@ -698,13 +700,13 @@ Write those three sentences in a Google Doc.
 
 **✅ Success looks like:** Three honest, specific sentences about production readiness. "The tool produces good outputs" is not enough — the question is about the entire system, not just the model's output quality.
 
----
+
 
 #### Tier 2 (15 minutes)
 
 Work through the **Vertex Promotion Checklist**. For each item, mark it ✅ (your prototype has this), ⚠️ (partial — needs work), or ❌ (missing — required before promotion).
 
----
+
 
 **VERTEX PROMOTION CHECKLIST**
 *Complete before promoting any AI Studio prototype to Vertex production*
@@ -713,7 +715,7 @@ Work through the **Vertex Promotion Checklist**. For each item, mark it ✅ (you
 **Prototype Status:** AI Studio / Gemini / NotebookLM (circle one)  
 **Completion Date:** _______________________________
 
----
+
 
 **Identity & Authentication**
 ☐ Authorized user list defined (who can use this tool?)
@@ -762,13 +764,13 @@ Work through the **Vertex Promotion Checklist**. For each item, mark it ✅ (you
 ☐ Rollback procedure documented
 ☐ Communication plan for rollback (who gets notified?)
 
----
+
 
 Count your ✅, ⚠️, and ❌. Circle every ❌ — those are your blockers.
 
 **✅ Success looks like:** A completed checklist with every ❌ clearly identified and a one-sentence action item for each blocker.
 
----
+
 
 #### Tier 3 (25 minutes)
 
@@ -783,13 +785,13 @@ Build your **Deployment Memo** — the document a Lukos PM would actually produc
 
 This is a real document. It should be something you could hand to a customer (with the DRAFT watermark on) as evidence that your team has thought through the deployment rigorously.
 
----
+
 
 > **⚠️ DRAFT — Not for Distribution**
 >
 > *This memo is a planning document only. Actual deployment requires review and approval by Lukos IT, legal, and applicable customer CIO/CISO offices. FedRAMP authorization status should be independently verified at [marketplace.fedramp.gov](https://marketplace.fedramp.gov) at time of deployment.*
 
----
+
 
 **LUKOS AI TOOL DEPLOYMENT MEMO**
 
@@ -797,7 +799,7 @@ This is a real document. It should be something you could hand to a customer (wi
 **Date:** _______________________________
 **Review Status:** DRAFT / PENDING / APPROVED (circle one)
 
----
+
 
 **1. Tool Description**
 
@@ -879,11 +881,11 @@ _________________________________________________________________
 
 *Reviewed by (Lukos Legal/Contracts):* ______ *Date:* _____________
 
----
+
 
 **✅ Success looks like:** A completed Deployment Memo with all eight sections filled in, the DRAFT watermark prominently displayed, and at least one person on your team able to explain the FedRAMP status section from memory — not from notes.
 
----
+
 
 ## Pack Debrief
 
@@ -937,6 +939,6 @@ _________________________________________________________________
 **OIL Format** — Observation, Implication, Lesson. The standard structure for JLLIS observations in DoD lessons learned processes.
 ```
 
----
+
 
 *In Chapter 6, we shift from platform architecture to capability building — the Forge, where your team learns to develop, test, and refine custom Gems and Skills that turn Gemini from a general-purpose tool into a specialized Lukos analyst. The kennel is ready. Now we train the dogs.*

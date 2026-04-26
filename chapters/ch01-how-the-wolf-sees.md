@@ -1,11 +1,13 @@
 ---
-title: "Chapter 1: How the Wolf Sees"
-subtitle: "The mental model you need before you touch a single tool"
+title: "AI Foundations & Prompt Engineering"
+subtitle: "How the Wolf Sees"
+short_title: "Ch 1: AI Foundations"
 label: ch01-how-the-wolf-sees
 description: "How LLMs actually work — tokens, context windows, hallucination, and the two pillars of prompting that determine output quality."
 ---
 
-# Chapter 1: How the Wolf Sees
+# AI Foundations & Prompt Engineering
+### *How the Wolf Sees*
 
 > *"You don't need to understand how the engine works to drive a car — but if you want to drive it fast, over bad terrain, without breaking down, it helps to know what's under the hood."*
 
@@ -13,7 +15,7 @@ Let's build the mental model that makes everything else in this book work.
 
 Not a computer science lecture. Not a history of neural networks. An operational briefing on how large language models actually work, what they need from you, where they'll fail you, and how to think about them as instruments in a professional environment. By the end of this chapter, you'll have a framework that makes every subsequent tool — [Gemini](https://gemini.google.com), [NotebookLM](https://notebooklm.google.com), [AI Studio](https://aistudio.google.com), [Antigravity](https://antigravity.google) — immediately more intuitive.
 
----
+
 
 ## 1.1 The Core Mental Model: IQ With a Memory Problem
 
@@ -57,7 +59,7 @@ But it also produced something with real limitations. The model's knowledge is f
 
 More on all of these. But first, the landscape.
 
----
+
 
 ## 1.2 The Landscape of Models: Three Tiers, Three Jobs
 
@@ -121,7 +123,7 @@ The tool that helps you make this call:
 
 This is the closest thing to an objective "buying guide" for AI models.
 
----
+
 
 ## 1.3 Hands-On Lab: The Pack Briefing — Model Arena Comparison
 
@@ -130,7 +132,7 @@ This is the closest thing to an objective "buying guide" for AI models.
 
 **Three tiers. Pick your entry point.**
 
----
+
 
 **⚡ Tier 1 — On-Ramp (5 minutes)**
 
@@ -147,7 +149,7 @@ This is the closest thing to an objective "buying guide" for AI models.
 
 ✅ **Success looks like:** You've seen two models answer the same question, voted on quality, and identified which model produced the better output.
 
----
+
 
 **🔥 Tier 2 — Core Rep (15 minutes)**
 
@@ -164,7 +166,7 @@ This is the closest thing to an objective "buying guide" for AI models.
 
 ✅ **Success looks like:** You've identified which output you'd actually send to a client and can articulate *why* it's better — not just that it "seems" better.
 
----
+
 
 **🚀 Tier 3 — WOW Moment (25 minutes)**
 
@@ -213,7 +215,7 @@ This is the closest thing to an objective "buying guide" for AI models.
 - How long would this analysis have taken an analyst to produce manually?
 ```
 
----
+
 
 ## 1.4 What LLMs Are Good At — And Bad At
 
@@ -267,7 +269,7 @@ Practical countermeasures:
 
 The wire brush applies here too. Brutal candor with AI outputs before they leave your hands.
 
----
+
 
 ## 1.5 Tokens: The Atom of AI
 
@@ -311,7 +313,7 @@ When you use AI through a consumer app ([gemini.google.com](https://gemini.googl
 
 The rule: **input tokens are cheap; output tokens cost more.** Reading a 50-page AAR costs a fraction of a cent. Generating a 10-page synthesis document costs more. For Lukos work at the volumes you're operating, the costs are negligible at API rates — but understanding the structure matters when you're building automated workflows that might process thousands of documents.
 
----
+
 
 ## 1.6 The Token Window — The First Pillar of Prompting
 
@@ -389,7 +391,7 @@ The practical implication for Lukos: when you're asking a model to analyze a lar
 
 **The Lukos shorthand:** Where in the prompt the documents sit changes the answer.
 
----
+
 
 ## 1.7 Token Economics: Reading the Pricing Sheet
 
@@ -419,7 +421,7 @@ For Lukos program managers supporting acquisition: when you're making the case f
 
 The indirect rate implication: tools that reduce direct labor hours while maintaining output quality affect both the direct cost and the overhead structure. That's an acquisition conversation worth having with your program's contracting officer.
 
----
+
 
 ## 1.8 Context Engineering — The Second Pillar of Prompting
 
@@ -491,7 +493,7 @@ Context engineering is the compound interest of AI work. The effort you put in t
 
 This is why the appendices in this book exist. We've done a lot of that work for you. Appendix A is the Persona Library. Appendix B is the Gem Library. Appendix C is the Skill Library. They're your starting templates. You refine them based on what works for your specific program.
 
----
+
 
 ## 1.9 The Two Pillars Together
 
@@ -540,7 +542,7 @@ If you can answer both questions well before you submit, you're prompting at a p
 
 The Lukos shorthand: **See clearly, brief precisely.**
 
----
+
 
 ## 1.10 Hands-On Lab: Token Counter & Context Window
 
@@ -549,7 +551,7 @@ The Lukos shorthand: **See clearly, brief precisely.**
 
 **Three tiers. Start where you are.**
 
----
+
 
 **⚡ Tier 1 — On-Ramp (5 minutes)**
 
@@ -563,7 +565,7 @@ The Lukos shorthand: **See clearly, brief precisely.**
 
 ✅ **Success looks like:** You can see the token counter update in real time and understand that every word you type has a measurable cost.
 
----
+
 
 **🔥 Tier 2 — Core Rep (15 minutes)**
 
@@ -580,7 +582,7 @@ The Lukos shorthand: **See clearly, brief precisely.**
 
 ✅ **Success looks like:** You have a concrete number for how many of your real work documents fit inside Gemini's context window simultaneously.
 
----
+
 
 **🚀 Tier 3 — WOW Moment (25–30 minutes)**
 
@@ -602,7 +604,7 @@ The Lukos shorthand: **See clearly, brief precisely.**
 ✅ **Success looks like:** The model identifies cross-cutting patterns across your three documents — the kind of cross-document analysis that would take a human analyst hours to produce manually. You've just run your first multi-document synthesis workflow.
 ```
 
----
+
 
 ## 1.11 Hands-On Lab: The Before/After Prompt
 
@@ -611,7 +613,7 @@ The Lukos shorthand: **See clearly, brief precisely.**
 
 **Three tiers. Experience the transformation.**
 
----
+
 
 **⚡ Tier 1 — On-Ramp (5 minutes)**
 
@@ -623,7 +625,7 @@ The Lukos shorthand: **See clearly, brief precisely.**
 
 ✅ **Success looks like:** The second response is noticeably sharper and more targeted. You've experienced the core thesis of this chapter.
 
----
+
 
 **🔥 Tier 2 — Core Rep (15 minutes)**
 
@@ -648,7 +650,7 @@ The Lukos shorthand: **See clearly, brief precisely.**
 
 ✅ **Success looks like:** The structured output requires minimal editing. The model delivered a professional product, not a generic summary.
 
----
+
 
 **🚀 Tier 3 — WOW Moment (25 minutes)**
 
@@ -667,7 +669,7 @@ The Lukos shorthand: **See clearly, brief precisely.**
 **The lesson:** You just experienced the entire premise of this chapter. The gap between Output 1 and the Tier 3 output is what this course closes. Permanently.
 ```
 
----
+
 
 ## Field Notes
 
@@ -707,7 +709,7 @@ Build this into every AI workflow before it produces deliverables:
 Not foolproof. But the same rigor you apply to any analytical product that hasn't been verified.
 ```
 
----
+
 
 ## Pack Debrief
 
