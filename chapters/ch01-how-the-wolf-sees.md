@@ -493,7 +493,57 @@ Context engineering is the compound interest of AI work. The effort you put in t
 
 This is why the appendices in this book exist. We've done a lot of that work for you. Appendix A is the Persona Library. Appendix B is the Gem Library. Appendix C is the Skill Library. They're your starting templates. You refine them based on what works for your specific program.
 
+### Context Rot — The Hidden Performance Decay
 
+Here is something almost no one tells you in an AI overview course, and it matters operationally: **the model that answers your first question is not the same model that answers your twentieth.**
+
+Not literally — but functionally, yes.
+
+As a conversation grows, the context window fills. Every exchange — your prompt, the model's response, your follow-up, its next response — consumes tokens. By the time you're 40 messages deep in a working session, the window is crowded. The model is now reasoning over a thick stack of prior conversation, trying to find what's relevant to your current question while simultaneously tracking the thread of everything you've discussed.
+
+This is **context rot**: the gradual degradation of output quality as the context window fills with accumulated conversation history.
+
+```{figure} ../images/ch01-context-rot.png
+:name: ch01-context-rot
+:alt: Context rot — output quality degrades as conversation history fills the context window
+:width: 100%
+
+**Context Rot.** Early in a session, the model has clean signal: your prompt, your documents, clear headroom. As the session grows, accumulated conversation history competes with your current task for attention. Quality, precision, and instruction-following all degrade — not because the model got worse, but because the context got noisier.
+```
+
+The symptoms are subtle and insidious. The model starts giving slightly vaguer answers. It begins mixing up details from earlier in the conversation with your current request. It stops following formatting instructions it was following reliably an hour ago. It "forgets" constraints you set at the beginning of the session.
+
+You might blame the model. The real culprit is the context.
+
+**Why it happens:** LLMs process the entire context window on every response. As the window fills, the model's "attention" gets distributed across a larger body of text. The signal-to-noise ratio drops. Your clean prompt at the bottom of the window is now competing with thirty prior exchanges for the model's attention.
+
+**The operational pattern:** Research has consistently shown that LLMs perform best at the beginning and end of their context — the "lost in the middle" problem. In a long session, your most recent prompt sits at the end (good), but it must compete with everything in the middle (bad). The system instruction you wrote at the very start — your persona, your constraints, your output format — is now buried at the top, far from the model's focus.
+
+**What to do about it:**
+
+*Tactic 1 — Start fresh sessions for distinct tasks.* Don't use one conversation to do five different things. The session where you drafted a briefing memo is polluted context for the session where you need to do a fresh OIL extraction. Open a new conversation. Your context window is clean again.
+
+*Tactic 2 — Re-anchor at regular intervals.* In a long working session, every 10–15 exchanges, paste your core instructions again. "Reminder: you are a J7 Lessons Learned analyst. Output format is OIL. Do not include recommendations unless I ask." It costs you thirty seconds. It buys back significant precision.
+
+*Tactic 3 — Use Gems and saved system instructions.* A Gem (Chapter 2) pre-loads your persona and instructions before the conversation starts — as a system-level instruction, not as part of the conversation history. This gives your core context privileged position, separate from the accumulating conversation noise.
+
+*Tactic 4 — Summarize before you continue.* If you must continue a long session, ask the model to summarize the key conclusions from the past exchange. Paste that summary into a fresh conversation as your starting context. You've distilled the signal and discarded the noise.
+
+*Tactic 5 — Watch for the symptoms.* Format drift. Vagueness creep. Constraint forgetting. These are your early warning signs. When you notice them, don't keep prompting harder — start fresh.
+
+```{admonition} Lukos Field Note — Context Rot and the Long AAR Session
+:class: tip
+
+A common failure pattern: an analyst loads a 200-page evaluation into Gemini, asks five good questions, gets sharp answers — then continues the session for two hours asking follow-up questions. By the end, the answers are noticeably softer. The analyst assumes the model "isn't good at this." The actual problem is context rot.
+
+**The fix:** For long analysis tasks, use NotebookLM (Chapter 4) instead of a raw Gemini chat. NotebookLM is architecturally designed for persistent document analysis — it doesn't suffer context rot the same way because the documents are stored separately from the conversation history. The chat stays clean; the corpus stays grounded.
+
+For chat-based work, keep sessions focused and short. One task, one session.
+```
+
+Context rot is not a flaw to be embarrassed about. It's a physical characteristic of how language models work — like ammunition count in a weapon system. You don't get frustrated that the magazine runs dry. You manage it, you plan around it, and you resupply when needed.
+
+The discipline: **Know your session's operational range. Plan accordingly.**
 
 ## 1.9 The Two Pillars Together
 
