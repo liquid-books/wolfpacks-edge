@@ -51,7 +51,7 @@ Same engine. Broader scope. New mission.
 
 For Lukos, this distinction is not academic. The question isn't "Can I use AI to help me write an AAR?" — you answered that in Chapter 2. The question is: **"Can I build a system that receives AARs, extracts observations, formats them to OIL standard, routes them to a review queue, and ingests approved outputs into the enterprise lessons database — reliably, accountably, at scale, on a network the customer's CIO has signed off on?"**
 
-That is an agent question. And the Gemini Enterprise Agent Platform is the answer.
+That is an agent question. And the [Gemini Enterprise Agent Platform](https://cloud.google.com/vertex-ai) is the answer.
 
 ### The Enterprise-Grade Distinction
 
@@ -64,7 +64,7 @@ Here's what separates Vertex from the consumer tools you've been using:
 | **Access controls** | You have access, or you don't | Role-based, granular, policy-driven |
 | **Cost management** | Flat subscription or free | Per-token billing, budget controls |
 | **Data residency** | Google's global infrastructure | Configurable, region-locked if needed |
-| **Compliance posture** | Consumer product TOS | FedRAMP-authorized (verify current status) |
+| **Compliance posture** | Consumer product TOS | FedRAMP-authorized (verify current status at [marketplace.fedramp.gov](https://marketplace.fedramp.gov)) |
 
 When your customer asks "Is this tool approved for use with our data?" — that table is the answer. Consumer tools fail on audit trail, access controls, data residency, and compliance posture. Vertex is built to pass.
 
@@ -85,11 +85,37 @@ Here's your operational briefing on each component.
 
 ### Model Garden — Your Vendor-Neutral AI Catalog
 
-Think of Model Garden as a procurement catalog for AI models. Instead of spinning up separate accounts with Google, Anthropic, Meta, and Mistral — and managing separate APIs, contracts, and compliance postures for each — you access **200+ models in one place** through Vertex.
+```{figure} ../images/ch05-model-garden.png
+:alt: Model Garden showing multiple AI vendors — Google, Anthropic, Meta — in one unified platform
+:width: 100%
 
-Gemini Pro. Gemini Flash. Claude 3.5 Sonnet. Llama 3.3. Gemma 3. All available through the same interface, under the same billing account, with the same logging and governance framework.
+**[Model Garden](https://console.cloud.google.com/vertex-ai/model-garden)** — one platform, 200+ models from Google, Anthropic, Meta, and open-weight providers. Vendor diversification without infrastructure complexity.
+```
 
-**Why does this matter to a Lukos PM?** Vendor diversification without infrastructure complexity. If Gemini 2.5 Pro is the right model for deep analysis tasks but Gemini Flash is faster and cheaper for high-volume classification, you can use both — without creating two separate compliance boundaries. One platform, multiple models, one audit trail.
+Think of [Model Garden](https://console.cloud.google.com/vertex-ai/model-garden) as a procurement catalog for AI models. Instead of spinning up separate accounts with Google, Anthropic, Meta, and Mistral — and managing separate APIs, contracts, and compliance postures for each — you access **200+ models in one place** through Vertex.
+
+**Current recommended models on Vertex (April 2026):**
+- **Gemini 3 Pro** — Generally Available (GA). Recommended for production accuracy-sensitive work.
+- **Gemini 3 Flash** — Generally Available (GA). Recommended for high-volume production workloads.
+- **Gemini 3.1 Pro** — Preview. Available on Vertex for early enterprise adoption.
+- **Claude (Anthropic)** — Available via Model Garden.
+- **Llama (Meta)** — Available via Model Garden.
+- **Gemma 4** — Open-weight option, released April 2, 2026. Available via Model Garden.
+
+```{admonition} ⚠️ Gemini 2.5 Retirement: October 16, 2026
+:class: warning
+
+Gemini 2.5 Pro and Gemini 2.5 Flash are scheduled for **retirement on October 16, 2026**. Any production system still running on 2.5 models should migrate to Gemini 3 Pro or Gemini 3 Flash now. See the [Vertex AI release notes](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/release-notes) for the latest model lifecycle information.
+```
+
+```{figure} ../images/ch05-retirement-timeline.png
+:alt: Gemini 2.5 retirement timeline to Gemini 3.x migration
+:width: 100%
+
+**Gemini model retirement timeline.** Gemini 2.5 Pro/Flash retire October 16, 2026. Migrate production systems to Gemini 3 Pro (GA) or Gemini 3 Flash (GA) now. Gemini 3.1 Pro is available in Preview for enterprises.
+```
+
+**Why does this matter to a Lukos PM?** Vendor diversification without infrastructure complexity. If Gemini 3 Pro is the right model for deep analysis tasks but Gemini 3 Flash is faster and cheaper for high-volume classification, you can use both — without creating two separate compliance boundaries. One platform, multiple models, one audit trail.
 
 It also matters for risk. If one model provider has a service outage or a compliance event, you're not locked in. You have options, and switching models on Vertex is a configuration change, not a platform migration.
 
@@ -103,13 +129,20 @@ The ADK is also the bridge between a custom Lukos agent and the full Vertex gove
 
 ### Agent Studio — The Visual Canvas for Non-Developers
 
+```{figure} ../images/ch05-agent-studio-canvas.png
+:alt: Agent Studio low-code visual canvas for building AI agent workflows
+:width: 100%
+
+**Agent Studio** — the low-code visual canvas for building agent workflows without writing code. Connect models, tools, retrieval steps, and review gates on a drag-and-drop canvas. The upgrade path from AI Studio prompt chains to production agent systems.
+```
+
 This is your on-ramp.
 
 Agent Studio is a low-code, drag-and-drop environment for building agent workflows visually. You don't write code. You connect components: a model here, a tool there, a retrieval step, a review queue, an output formatter. You build the logic flow of your agent the same way you'd build a process map in Visio — but when you hit "deploy," it actually runs.
 
 **This is where Lukos site leads and senior analysts can begin building real agents without an IT team.** Not every production use case — complex orchestration and data integrations still need developer support. But straightforward, structured workflows? Absolutely within reach.
 
-Think of it as the upgrade path from AI Studio. In AI Studio (Chapter 3), you built a prompt chain. In Agent Studio, you build a system — with data inputs, retrieval steps, human review gates, and logged outputs.
+Think of it as the upgrade path from AI Studio. In [AI Studio](https://aistudio.google.com) (Chapter 3), you built a prompt chain. In Agent Studio, you build a system — with data inputs, retrieval steps, human review gates, and logged outputs. See the [Agent Builder overview](https://cloud.google.com/vertex-ai/generative-ai/docs/agent-builder/overview) for full documentation.
 
 ### Agent Garden — Don't Start From Scratch
 
@@ -183,7 +216,7 @@ Here's the hard line.
 
 ### Belongs on Vertex
 
-**Customer-facing AI deployments.** If a customer — USSOCOM, a component command, a government program office — will interact with or receive outputs from an AI tool, it goes on Vertex. Period. The customer's CIO/CISO office has not authorized your personal gemini.google.com account to process their mission data. They've authorized a platform — and that platform needs to be on the FedRAMP marketplace.
+**Customer-facing AI deployments.** If a customer — USSOCOM, a component command, a government program office — will interact with or receive outputs from an AI tool, it goes on Vertex. Period. The customer's CIO/CISO office has not authorized your personal gemini.google.com account to process their mission data. They've authorized a platform — and that platform needs to be on the [FedRAMP marketplace](https://marketplace.fedramp.gov).
 
 **Anything touching FOUO, CUI, or sensitive contract data.** FOUO and CUI aren't just labels — they're handling requirements. Data marked FOUO or CUI cannot be processed on consumer cloud tools without explicit authorization. If you're using AI to analyze a document that contains either marking, and you're pasting it into gemini.google.com, you are potentially creating a compliance event. The correct environment is a FedRAMP-authorized platform with appropriate data residency controls.
 
@@ -203,7 +236,7 @@ Here's the hard line.
 
 **Personal productivity.** Drafting emails. Summarizing articles. Brainstorming ideas. If it's your personal work product and it doesn't touch sensitive data, consumer tools are entirely appropriate and significantly more convenient.
 
-**Prototyping before promoting.** You should *always* prototype in AI Studio before promoting to Vertex. Build it cheap, break it cheap, refine it cheap. Then, when it works, promote it. We'll walk through exactly how in section 5.5.
+**Prototyping before promoting.** You should *always* prototype in [AI Studio](https://aistudio.google.com) before promoting to Vertex. Build it cheap, break it cheap, refine it cheap. Then, when it works, promote it. We'll walk through exactly how in section 5.5.
 
 ---
 
@@ -214,6 +247,13 @@ Here's the hard line.
 :width: 100%
 
 **The federal authorization landscape for AI.** Impact Level 2 covers public unclassified data. IL4 covers CUI and FOUO. IL5 covers national security systems. Each level has specific authorized tools — and the marketplace changes. Check before you claim.
+```
+
+```{figure} ../images/ch05-fedramp-checklist.png
+:alt: FedRAMP verification checklist for federal AI contractors
+:width: 100%
+
+**The FedRAMP verification checklist.** Before any federal AI deployment: visit [marketplace.fedramp.gov](https://marketplace.fedramp.gov), confirm Authorized status (not In Process), verify impact level, document for contract files, and engage the customer CIO/CISO office.
 ```
 
 This section is the most important one in the chapter for anyone signing a federal contract.
@@ -228,7 +268,7 @@ Now let's unpack what that actually means.
 
 FedRAMP — the Federal Risk and Authorization Management Program — is the federal government's standardized approach to cloud service authorization. Before a federal agency can deploy a cloud service to process government data, that service needs to either be FedRAMP authorized or have a specific agency-level ATO (Authority to Operate).
 
-The FedRAMP Marketplace (fedramp.gov/marketplace) is the authoritative list of authorized cloud services. It's searchable, filterable, and updated regularly. Before you tell a customer that a tool is authorized, you go to this list and you confirm the status, the authorization level, and the date of authorization.
+The **[FedRAMP Marketplace](https://marketplace.fedramp.gov)** is the authoritative list of authorized cloud services. It's searchable, filterable, and updated regularly. Before you tell a customer that a tool is authorized, you go to this list and you confirm the status, the authorization level, and the date of authorization.
 
 Three statuses to know:
 - **FedRAMP Authorized** — fully authorized, can be used per the listed impact level
@@ -247,7 +287,7 @@ Authorization levels correspond to data sensitivity:
 
 Google Cloud Platform has FedRAMP High authorization. But — and this is critical — **the specific product configuration matters**. A service being FedRAMP authorized doesn't automatically mean every Google product on every configuration is authorized for your specific use case.
 
-The Gemini Enterprise Agent Platform's FedRAMP status is evolving. At time of writing, Google Cloud has broad FedRAMP High coverage, and the enterprise AI products are covered under that umbrella — but you should verify the current status at fedramp.gov/marketplace before making any representation to a customer.
+The Gemini Enterprise Agent Platform's FedRAMP status is evolving rapidly. At time of writing, Google Cloud has broad FedRAMP High coverage, and the enterprise AI products are covered under that umbrella — but you **must** verify the current status at [marketplace.fedramp.gov](https://marketplace.fedramp.gov) and check [cloud.google.com](https://cloud.google.com/vertex-ai) for current IL4/IL5 guidance before making any representation to a customer.
 
 ### The Lukos Risk: This Is Not Hypothetical
 
@@ -277,14 +317,14 @@ Build the relationship. Know who the customer's information assurance contacts a
 :alt: The promotion path from AI Studio prototype to Vertex production
 :width: 100%
 
-**The Promotion Pattern.** Every production Vertex deployment starts as an AI Studio prototype. The seam between Stage 2 and Stage 3 is where most AI projects succeed or fail.
+**The Promotion Pattern.** Every production Vertex deployment starts as an [AI Studio](https://aistudio.google.com) prototype. The seam between Stage 2 and Stage 3 is where most AI projects succeed or fail.
 ```
 
 Here's the workflow that every Lukos AI tool should follow. No exceptions.
 
 ### Stage 1: Prototype in AI Studio
 
-Fast. Free. No governance overhead. Build the thing, break the thing, rebuild the thing. AI Studio is exactly the right environment for this — low friction, immediate feedback, no IT tickets required.
+Fast. Free. No governance overhead. Build the thing, break the thing, rebuild the thing. [AI Studio](https://aistudio.google.com) is exactly the right environment for this — low friction, immediate feedback, no IT tickets required.
 
 Your goal at this stage is one thing: **Does this tool do something valuable?** Not "Is it perfect?" Not "Is it production-ready?" Just — does it work? Does it produce outputs that someone would want?
 
@@ -303,7 +343,7 @@ The questions you're trying to answer:
 
 Most AI projects die here — not because the tool doesn't work, but because the organization wasn't really ready to change the workflow it would replace. That's fine. Better to find out in Stage 2 than after you've built a production system.
 
-If the customer says "yes, we want this running reliably, with our real data, every day" — you're ready to promote.
+If the customer says "yes, we want this running reliably, with their real data, every day" — you're ready to promote.
 
 ### Stage 3: The Promotion Checklist
 
@@ -320,9 +360,10 @@ This is the seam where most AI projects succeed or fail. Promotion from AI Studi
 - How long are logs retained, and under what policy?
 
 **Model Selection Review:**
-- Is Gemini Pro the right model for production? Should you use Flash for cost efficiency on high-volume tasks?
+- Is Gemini 3 Pro the right model for production? Should you use Gemini 3 Flash for cost efficiency on high-volume tasks?
 - Have you evaluated the model's performance on your production data, not just your test cases?
 - Do you have a model update plan — what happens when Google releases a new model version?
+- **Have you checked the [Vertex AI release notes](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/release-notes) to confirm your chosen model's lifecycle status?** (Gemini 2.5 models retire October 16, 2026.)
 
 **Evaluation Harness:**
 - How do you know when the model is performing well vs. degrading?
@@ -340,7 +381,7 @@ This is the seam where most AI projects succeed or fail. Promotion from AI Studi
 - Have you configured VPC Service Controls if required?
 
 **FedRAMP Status:**
-- Have you checked fedramp.gov/marketplace for current authorization status?
+- Have you checked [marketplace.fedramp.gov](https://marketplace.fedramp.gov) for current authorization status?
 - Is the authorization level appropriate for the data sensitivity?
 - Do you have documentation of the authorization status for your contract files?
 
@@ -363,7 +404,7 @@ Here's the specific delta for the AAR-to-OIL tool:
 | **Who can access** | You, anyone you share with | Only IAM-authorized users |
 | **How it's logged** | Not logged | Every invocation, fully logged |
 | **Input handling** | You paste or upload manually | Secure upload endpoint, access-controlled |
-| **Model** | Gemini in Studio | Gemini Pro/Flash, version-pinned, evaluated |
+| **Model** | Gemini in Studio | Gemini 3 Pro/Flash, version-pinned, evaluated |
 | **Output destination** | Your screen | Review queue → lessons database |
 | **Cost** | Free (Studio) | Per-token billing, tracked to a budget code |
 | **Support** | Best effort | Enterprise SLA |
@@ -388,7 +429,7 @@ Here's what you need to know.
 
 ### What Vertex Bills
 
-**Foundation Model Tokens:** Every time an agent calls a model, you pay for the input tokens (the context, the prompt, the retrieved documents) and the output tokens (the generated response). Pricing varies by model — Gemini 2.5 Pro costs more per token than Gemini Flash; Flash costs more than Gemini 2.0 Flash Lite. The right model is the one that produces sufficient output quality at the lowest per-token cost for your use case.
+**Foundation Model Tokens:** Every time an agent calls a model, you pay for the input tokens (the context, the prompt, the retrieved documents) and the output tokens (the generated response). Pricing varies by model — Gemini 3 Pro costs more per token than Gemini 3 Flash; Flash costs more than lighter-weight variants. The right model is the one that produces sufficient output quality at the lowest per-token cost for your use case. For current pricing, see the [Vertex AI pricing page](https://cloud.google.com/vertex-ai/pricing).
 
 **Vector Storage:** Your document corpus lives in a vector store. You pay for storage by the GB-month. For a typical Lukos lessons learned corpus — hundreds of AARs, after-action products, and reference documents — this is usually a small line item, but it adds up as the corpus grows.
 
@@ -398,13 +439,19 @@ Here's what you need to know.
 
 ### Getting Started: The Free On-Ramp
 
-Google Cloud offers $300 in credits for new accounts, and Google AI Studio access is free at the entry tier. For prototyping and early production testing, this provides meaningful runway without budget allocation.
+Google Cloud offers $300 in credits for new accounts, and [Google AI Studio](https://aistudio.google.com) access is free at the entry tier. For prototyping and early production testing, this provides meaningful runway without budget allocation.
 
 When you're ready to stand up a production environment, talk to your Google Cloud account team about the Google for Government program — there are negotiated pricing structures and dedicated support tracks for federal contractors.
 
 ### Building an Honest Cost Projection
 
 Before you propose a Vertex-hosted solution to a customer, you owe them (and yourself) an honest cost projection. Here's a simple framework:
+
+```{admonition} ⚠️ Illustrative Example — Not a Guarantee
+:class: warning
+
+The cost and ROI numbers below are **illustrative examples only**. Actual costs depend on model selection, token volume, storage, and your specific implementation. Actual labor savings depend on use case, analyst workflow, document complexity, and organizational adoption. Always build your own projection from current [Vertex AI pricing](https://cloud.google.com/vertex-ai/pricing) before proposing to a customer.
+```
 
 **Example: AAR-to-OIL Production Tool**
 
@@ -413,38 +460,46 @@ Inputs:
 - Retrieved context: average 3,000 tokens per query from vector store
 - Output per AAR: average 2,000 tokens (OIL-formatted observations)
 
-Per-AAR cost (using Gemini 1.5 Pro rates as reference):
-- Input tokens: 8,000 × $0.00125/1K = $0.01
-- Output tokens: 2,000 × $0.005/1K = $0.01
-- Per AAR: approximately $0.02
+Per-AAR cost (using current Gemini 3 Flash rates as reference — check [Vertex pricing](https://cloud.google.com/vertex-ai/pricing) for current figures):
+- Input tokens: 8,000 × current rate
+- Output tokens: 2,000 × current rate
+- Per AAR: approximately $0.02 at illustrative rates
 
 Weekly cost: 25 AARs × $0.02 = $0.50/week
 
-Monthly cost: approximately $2.00–$3.00 in model inference
+Monthly cost: approximately $2.00–$3.00 in model inference (illustrative)
 
-Add vector storage (50GB corpus): ~$1.50/month
+Add vector storage (50GB corpus): ~$1.50/month (illustrative)
 
-**Total monthly infrastructure cost: $5–$10/month**
+**Illustrative total monthly infrastructure cost: $5–$10/month**
+
+*Actual savings depend on use case, volume, and implementation.*
 
 Now compare that to the ROI argument.
 
 ### The ROI Calculation
 
+```{admonition} ⚠️ Illustrative ROI — Not a Guarantee
+:class: warning
+
+The following calculation is an **illustrative example** to demonstrate the ROI framework. It uses estimated labor rates and time assumptions. Your actual savings will depend on your specific use case, analyst workflow, document complexity, organizational adoption rate, and current labor costs. Build your own model using actual data before presenting to a customer. **Actual savings depend on use case, volume, and implementation.**
+```
+
 A fully loaded analyst at GS-13 equivalent — salary, benefits, overhead — runs approximately $120–$150/hour. If an analyst spends two hours per AAR on observation extraction, formatting, and JLLIS entry, and you're processing 25 AARs per week:
 
-Manual cost: 25 AARs × 2 hours × $120/hour = **$6,000/week**
+Manual cost: 25 AARs × 2 hours × $120/hour = **$6,000/week** (illustrative)
 
 With the AI-assisted workflow (analyst reviews pre-formatted AI output, makes corrections, approves):
 - Analyst time per AAR: 20 minutes instead of 120 minutes
-- Assisted cost: 25 AARs × 0.33 hours × $120/hour = **$990/week**
+- Assisted cost: 25 AARs × 0.33 hours × $120/hour = **$990/week** (illustrative)
 
-**Weekly savings: $5,010. Monthly savings: approximately $20,000.**
+**Weekly savings: ~$5,010. Monthly savings: approximately $20,000. (Illustrative example)**
 
-Infrastructure cost: $5–10/month.
+Infrastructure cost: $5–10/month (illustrative).
 
-This is not an argument that AI replaces the analyst. It's an argument that AI-augmented analysts produce dramatically better throughput at dramatically lower cost — and the infrastructure cost is trivial relative to the labor savings.
+This is not an argument that AI replaces the analyst. It's an argument that AI-augmented analysts produce dramatically better throughput at dramatically lower cost — and the infrastructure cost is trivial relative to the labor savings. **Actual savings depend on use case, volume, and implementation.**
 
-**Build this calculation before you propose.** Customers who understand the ROI approve the budget. Customers who only see the infrastructure cost sometimes get sticker shock at things that shouldn't cause sticker shock.
+**Build this calculation with your own numbers before you propose.** Customers who understand the ROI approve the budget. Customers who only see the infrastructure cost sometimes get sticker shock at things that shouldn't cause sticker shock.
 
 ---
 
@@ -457,7 +512,14 @@ This is not an argument that AI replaces the analyst. It's an argument that AI-a
 **The Lukos AAR-to-Insight pipeline on Vertex.** From secure upload to lessons database — every step logged, every output auditable, every access controlled.
 ```
 
-Let's put it all together. Here's what the full Lukos AAR-to-Insight pipeline looks like as a production architecture on Vertex.
+```{figure} ../images/ch05-human-in-loop.png
+:alt: The human-in-the-loop review checkpoint in the AAR pipeline
+:width: 100%
+
+**Human-in-the-loop review checkpoint.** Every AI-generated OIL observation passes through a human reviewer before entering the lessons database. Approve, edit, or reject — every decision is logged with analyst identity and timestamp. Nothing gets to the database without a human signature.
+```
+
+Let's put it all together. Here's what the full Lukos AAR-to-Insight pipeline looks like as a production architecture on [Vertex AI](https://cloud.google.com/vertex-ai).
 
 ### The Flow
 
@@ -471,7 +533,7 @@ The ingest event triggers the AAR Processing Agent in the Agent Engine. The agen
 The agent queries the RAG Engine: *"What historical observations are most relevant to this exercise type, unit type, and focus area?"* The Vector Search index returns the top-K relevant observations from the lessons database. These are injected into the context window alongside the new AAR.
 
 **Step 4: Model Generates Analysis**
-Gemini Pro receives: the new AAR, the retrieved historical observations, and the OIL formatting instructions. It generates a structured set of draft observations in OIL format — Observation, Implication, Lesson — for each key finding in the AAR.
+Gemini 3 Pro receives: the new AAR, the retrieved historical observations, and the OIL formatting instructions. It generates a structured set of draft observations in OIL format — Observation, Implication, Lesson — for each key finding in the AAR.
 
 **Step 5: Human Review Queue**
 The draft observations go into a review queue — a lightweight web interface or Google Sheets integration where the responsible analyst or site lead reviews each observation. They can approve, edit, or reject each one. Nothing goes to the database without a human signature.
@@ -496,7 +558,7 @@ flowchart TD
     D -->|RAG Query| E[🔍 RAG Engine<br/>Vector Search]
     E -->|Historical Observations| F[📚 Vector Store<br/>Lessons Database]
     F -->|Top-K Relevant Context| C
-    C -->|AAR + Context + Instructions| G[💎 Gemini Pro<br/>OIL Generation]
+    C -->|AAR + Context + Instructions| G[💎 Gemini 3 Pro<br/>OIL Generation]
     G -->|Draft OIL Observations| H[📋 Human Review Queue<br/>Analyst Interface]
     H -->|Reject| I[🗑️ Discarded<br/>with Reason Logged]
     H -->|Approve / Edit| J[✅ Lessons Database<br/>Structured Observations]
@@ -597,9 +659,9 @@ You're going to generate a professional system architecture diagram — the kind
 
 **Step 1: Use this exact prompt in Gemini:**
 
-> *"I need to design a Vertex AI architecture for a Lessons Learned processing pipeline. The use case: a federal contractor's analysts upload after-action review (AAR) PDFs to a secure endpoint. A Vertex Agent Engine agent processes each AAR, queries a RAG Engine backed by a vector store of historical observations, and uses Gemini Pro to generate OIL-formatted (Observation, Implication, Lesson) observations. Outputs go to a human review queue before being approved and ingested into the lessons database. Every step must be logged for audit.*
+> *"I need to design a Vertex AI architecture for a Lessons Learned processing pipeline. The use case: a federal contractor's analysts upload after-action review (AAR) PDFs to a secure endpoint. A Vertex Agent Engine agent processes each AAR, queries a RAG Engine backed by a vector store of historical observations, and uses Gemini 3 Pro to generate OIL-formatted (Observation, Implication, Lesson) observations. Outputs go to a human review queue before being approved and ingested into the lessons database. Every step must be logged for audit.*
 >
-> *Generate a Mermaid flowchart diagram showing this complete pipeline. Include: secure upload, agent engine, RAG retrieval, vector store, Gemini Pro model, human review queue, lessons database, and audit trail. Use clear labels and emoji icons. Use directional arrows to show data flow. Format the output as a complete mermaid code block.*
+> *Generate a Mermaid flowchart diagram showing this complete pipeline. Include: secure upload, agent engine, RAG retrieval, vector store, Gemini 3 Pro model, human review queue, lessons database, and audit trail. Use clear labels and emoji icons. Use directional arrows to show data flow. Format the output as a complete mermaid code block.*
 >
 > *After the diagram, list the five most important governance questions a federal program manager should answer before deploying this system.*"
 
@@ -664,9 +726,10 @@ Work through the **Vertex Promotion Checklist**. For each item, mark it ✅ (you
 ☐ Log review process defined (who looks at these? how often?)
 
 **Model Selection Review**
-☐ Production model identified and version-pinned
+☐ Production model identified and version-pinned (Gemini 3 Pro or Gemini 3 Flash recommended)
+☐ Model lifecycle confirmed — check [Vertex release notes](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/release-notes) (Note: Gemini 2.5 models retire October 16, 2026)
 ☐ Model performance evaluated on production-representative data
-☐ Cost/quality tradeoff documented (Flash vs. Pro?)
+☐ Cost/quality tradeoff documented (Gemini 3 Flash vs. Gemini 3 Pro?)
 
 **Evaluation Harness**
 ☐ Baseline performance metric defined (what does "good enough" mean?)
@@ -675,12 +738,12 @@ Work through the **Vertex Promotion Checklist**. For each item, mark it ✅ (you
 
 **Cost Projection**
 ☐ Volume estimate completed (queries per day/week/month)
-☐ Per-query cost calculated
+☐ Per-query cost calculated using current [Vertex AI pricing](https://cloud.google.com/vertex-ai/pricing)
 ☐ Monthly budget estimate approved by appropriate authority
 
 **Data Residency & FedRAMP**
 ☐ Data sensitivity level confirmed (Unclassified / FOUO / CUI)
-☐ FedRAMP authorization status checked at fedramp.gov/marketplace
+☐ FedRAMP authorization status checked at [marketplace.fedramp.gov](https://marketplace.fedramp.gov)
 ☐ Processing region confirmed appropriate for data sensitivity
 ☐ Customer CIO/CISO notified or consulted (as appropriate)
 
@@ -709,6 +772,13 @@ Count your ✅, ⚠️, and ❌. Circle every ❌ — those are your blockers.
 
 #### Tier 3 (25 minutes)
 
+```{figure} ../images/ch05-deployment-memo-template.png
+:alt: The one-page Deployment Memo template for Lukos AI tool proposals
+:width: 100%
+
+**The Deployment Memo template.** Eight sections, one page, DRAFT watermark required. This is the document a Lukos PM produces before proposing any Vertex-hosted tool to a customer — evidence that your team has thought through the deployment rigorously.
+```
+
 Build your **Deployment Memo** — the document a Lukos PM would actually produce before proposing a Vertex-hosted tool to a customer.
 
 This is a real document. It should be something you could hand to a customer (with the DRAFT watermark on) as evidence that your team has thought through the deployment rigorously.
@@ -717,7 +787,7 @@ This is a real document. It should be something you could hand to a customer (wi
 
 > **⚠️ DRAFT — Not for Distribution**
 >
-> *This memo is a planning document only. Actual deployment requires review and approval by Lukos IT, legal, and applicable customer CIO/CISO offices. FedRAMP authorization status should be independently verified at fedramp.gov/marketplace at time of deployment.*
+> *This memo is a planning document only. Actual deployment requires review and approval by Lukos IT, legal, and applicable customer CIO/CISO offices. FedRAMP authorization status should be independently verified at [marketplace.fedramp.gov](https://marketplace.fedramp.gov) at time of deployment.*
 
 ---
 
@@ -757,15 +827,17 @@ _________________________________________________________________
 
 **4. FedRAMP Authorization Status**
 
-*Check fedramp.gov/marketplace. Fill in at time of writing.*
+*Check [marketplace.fedramp.gov](https://marketplace.fedramp.gov). Fill in at time of writing.*
 
-- Platform: Google Cloud / Gemini Enterprise Agent Platform
+- Platform: Google Cloud / Gemini Enterprise Agent Platform ([cloud.google.com/vertex-ai](https://cloud.google.com/vertex-ai))
 - Current FedRAMP status: _______________________________
 - Authorization level: _______________________________
 - Verification date: _______________________________
 - Source URL: _______________________________
 
 **5. Estimated Monthly Cost**
+
+*Build from current [Vertex AI pricing](https://cloud.google.com/vertex-ai/pricing). All figures are estimates.*
 
 | Line Item | Estimate |
 |---|---|
@@ -775,6 +847,8 @@ _________________________________________________________________
 | **Total monthly** | **$** |
 
 *Basis for estimate:* ___________________________________________
+
+*Note: Actual costs depend on use case, volume, and implementation.*
 
 **6. Human Oversight Plan**
 
@@ -824,27 +898,33 @@ _________________________________________________________________
 
 3. **Eight components, one platform.** Model Garden, ADK, Agent Studio, Agent Garden, RAG Engine, Agent Engine, Model Armor, Agent Identity + Gateway. Know what each one does and why it matters.
 
-4. **Hard line on use cases.** Customer-facing, FOUO/CUI, audit-required, IAM-required, long-running, production — those go on Vertex. Learning, experimentation, personal productivity, prototyping — consumer tools are fine.
+4. **Current recommended models on Vertex (April 2026):** Gemini 3 Pro (GA) for accuracy work, Gemini 3 Flash (GA) for volume work, Gemini 3.1 Pro (Preview). Gemma 4 open-weight available in Model Garden. **Gemini 2.5 Pro/Flash retire October 16, 2026** — migrate now.
 
-5. **Verify, don't assume.** FedRAMP authorization status changes. Check fedramp.gov/marketplace before every deployment claim. Your point of contact is the customer's CIO/CISO office, not Google's sales team.
+5. **Hard line on use cases.** Customer-facing, FOUO/CUI, audit-required, IAM-required, long-running, production — those go on Vertex. Learning, experimentation, personal productivity, prototyping — consumer tools are fine.
 
-6. **The Promotion Pattern.** Every production Vertex tool starts as an AI Studio prototype. The seam between prototype and production — where most AI projects succeed or fail — requires a checklist, not a gut call.
+6. **Verify, don't assume.** FedRAMP authorization status changes. Check [marketplace.fedramp.gov](https://marketplace.fedramp.gov) before every deployment claim. Your point of contact is the customer's CIO/CISO office, not Google's sales team.
 
-7. **The cost model is favorable.** Vertex bills per token, not flat subscription. For typical Lukos use cases, infrastructure cost is $5–20/month. The ROI argument is orders of magnitude larger than the cost. Build the calculation before you propose.
+7. **The Promotion Pattern.** Every production Vertex tool starts as an [AI Studio](https://aistudio.google.com) prototype. The seam between prototype and production — where most AI projects succeed or fail — requires a checklist, not a gut call.
 
-8. **The architecture exists.** The Lukos AAR-to-Insight pipeline is not hypothetical. The components are available, the pattern is proven, and the governance requirements are manageable. The question is whether your team is ready to build it.
+8. **The cost model is favorable.** Vertex bills per token, not flat subscription. For typical Lukos use cases, infrastructure cost is illustratively $5–20/month. The ROI argument is orders of magnitude larger than the cost. Build the calculation with your own numbers before you propose. **Actual savings depend on use case, volume, and implementation.**
+
+9. **The architecture exists.** The Lukos AAR-to-Insight pipeline is not hypothetical. The components are available, the pattern is proven, and the governance requirements are manageable. The question is whether your team is ready to build it.
 ```
 
 ```{admonition} Key Terms
 :class: note
 
-**FedRAMP** — Federal Risk and Authorization Management Program. The federal government's standard for cloud service authorization. Check current status at fedramp.gov/marketplace.
+**FedRAMP** — Federal Risk and Authorization Management Program. The federal government's standard for cloud service authorization. Check current status at [marketplace.fedramp.gov](https://marketplace.fedramp.gov).
 
 **Impact Level (IL)** — Authorization tier for federal data environments. IL2: public unclassified. IL4: CUI/FOUO. IL5: national security systems.
 
 **CUI** — Controlled Unclassified Information. Requires specific handling procedures and IL4-minimum platforms.
 
 **FOUO** — For Official Use Only. Sensitive but unclassified; requires authorized platform minimum.
+
+**Gemini Enterprise Agent Platform** — Google's enterprise AI agent platform (renamed from Vertex AI at Google Cloud Next 2026). Home: [cloud.google.com/vertex-ai](https://cloud.google.com/vertex-ai). Agent Builder docs: [cloud.google.com/vertex-ai/generative-ai/docs/agent-builder/overview](https://cloud.google.com/vertex-ai/generative-ai/docs/agent-builder/overview).
+
+**Model Garden** — Vertex's catalog of 200+ models from multiple vendors. Access at [console.cloud.google.com/vertex-ai/model-garden](https://console.cloud.google.com/vertex-ai/model-garden).
 
 **RAG Engine** — Retrieval-Augmented Generation Engine. Grounds AI outputs in your specific document corpus rather than general training data.
 
