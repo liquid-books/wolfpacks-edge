@@ -65,7 +65,7 @@ Not the breathless headline version. Not the vendor demo. A real one — where s
 
 That's this book.
 
-**The Wolfpack's Edge** is the companion to Dr. Lee's two-day intensive AI course for the Lukos team. Read it before class to get grounded. Bring it to class to follow along. Keep it after class when you're building your first Gem at 10 PM and need to remember which setting to click.
+**The Wolfpack's Edge** is the companion to the two-day intensive AI course for the Lukos team, developed and delivered by **Dr. Ernesto Lee** and **Professor Carlos Marquez** of Miami Dade College. Read it before class to get grounded. Bring it to class to follow along. Keep it after class when you're building your first Gem at 10 PM and need to remember which setting to click.
 
 Every example in this book comes from the world you actually work in: Lessons Learned, experimentation support, foreign partner engagement, acquisition, behavioral health, training development, ORSA analysis. No generic corporate AI examples. Just your work, running faster.
 
@@ -73,7 +73,7 @@ Every example in this book comes from the world you actually work in: Lessons Le
 
 ## 📋 Before You Begin: AI Readiness Assessment
 
-Before class, take five minutes to complete the **Lukos AI Readiness Gap Assessment**. It tells Dr. Lee where the pack is starting from — and helps you identify your own gaps before we address them together.
+Before class, take five minutes to complete the **Lukos AI Readiness Gap Assessment**. It tells Dr. Lee and Professor Marquez where the pack is starting from — and helps you identify your own gaps before we address them together.
 
 **[→ Complete the AI Readiness Gap Assessment](https://docs.google.com/forms/d/1QQJJ4eZq1kpk5lRWL4TL1nxIeogpz1SkhxgzQpPOF44/edit)**
 
@@ -161,10 +161,16 @@ Chapter 10 covers AI at the edge: offline deployment on isolated or air-gapped n
 
 ---
 
-## Continue Learning with Dr. Lee
+## About the Authors
 
-- **[drlee.io](https://drlee.io)** — Course materials, tools, and updates
-- **[drlee.ai](https://drlee.ai)** — AI research and practitioner-focused education
+**Dr. Ernesto Lee** is a professor at Miami Dade College and an AI practitioner specializing in applied AI adoption for high-performance organizations. He writes at [drlee.io](https://drlee.io) and delivers enterprise AI training through [drlee.ai](https://drlee.ai).
+
+**Professor Carlos Marquez** is a professor at Miami Dade College with deep expertise in technology education and applied AI. Together, Lee and Marquez bring both academic rigor and real-world practitioner experience to the Lukos team.
+
+## Continue Learning
+
+- **[drlee.io](https://drlee.io)** — Essays, tools, and AI updates from Dr. Lee
+- **[drlee.ai](https://drlee.ai)** — Courses, workshops, and enterprise training programs
 
 ---
 

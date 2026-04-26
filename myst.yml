@@ -4,6 +4,9 @@ project:
   subtitle: "Mastering Google's AI Ecosystem for Lessons Learned, Special Operations Support, and Mission-Critical Decision Making"
   authors:
     - name: Dr. Ernesto Lee
+      affiliation: Miami Dade College
+    - name: Professor Carlos Marquez
+      affiliation: Miami Dade College
   description: "A Field Manual for the Lukos Team — companion to the two-day intensive AI course."
   keywords:
     - AI
