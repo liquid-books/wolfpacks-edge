@@ -1,0 +1,76 @@
+version: 1
+project:
+  title: "The Wolfpack's Edge"
+  subtitle: "Mastering Google's AI Ecosystem for Lessons Learned, Special Operations Support, and Mission-Critical Decision Making"
+  authors:
+    - name: Dr. Ernesto Lee
+  description: "A Field Manual for the Lukos Team — companion to the two-day intensive AI course."
+  keywords:
+    - AI
+    - Google Gemini
+    - Special Operations
+    - Lessons Learned
+    - USSOCOM
+    - NotebookLM
+    - AI Studio
+    - Antigravity
+    - LM Studio
+    - Gemma
+  license: CC-BY-4.0
+  open_access: true
+  github: https://github.com/liquid-books/wolfpacks-edge
+  numbering:
+    heading_1: true
+    heading_2: true
+    heading_3: false
+    figure: true
+    table: true
+    equation: true
+  toc:
+    - file: index.md
+
+    - title: "— DAY 1: Foundations —"
+      children:
+        - file: chapters/ch00-prologue.md
+        - file: chapters/ch01-how-the-wolf-sees.md
+        - file: chapters/ch02-field-operative.md
+        - file: chapters/ch03-workshop.md
+        - file: chapters/ch04-research-partner.md
+
+    - title: "— DAY 2: Deployment —"
+      children:
+        - file: chapters/interlude-value-stack.md
+        - file: chapters/ch05-kennel.md
+        - file: chapters/ch06-the-forge.md
+        - file: chapters/ch07-skill-library.md
+        - file: chapters/ch08-synthetic-wolfpack.md
+        - file: chapters/ch09-firecrawl.md
+        - file: chapters/ch10-edge-wolf.md
+        - file: chapters/ch11-operating-model.md
+
+    - title: "— Capstone & Beyond —"
+      children:
+        - file: chapters/ch12-capstone.md
+        - file: chapters/ch13-pack-goes-forward.md
+        - file: chapters/ch14-claude-family.md
+
+    - title: "Addenda"
+      children:
+        - file: chapters/add-a-wisprflow.md
+        - file: chapters/add-b-readiness-gap.md
+        - file: chapters/add-c-mermaid.md
+        - file: chapters/add-d-value-creation.md
+
+    - title: "Appendices"
+      children:
+        - file: chapters/app-a-persona-library.md
+        - file: chapters/app-b-gem-library.md
+        - file: chapters/app-c-skill-library.md
+
+site:
+  title: "The Wolfpack's Edge"
+  options:
+    logo_text: "The Wolfpack's Edge"
+    logo_url: "/"
+  parts:
+    primary_sidebar_footer: primary-sidebar-footer.md
