@@ -511,6 +511,14 @@ Open LM Studio. The model is already downloaded. Run the same Lessons Learned ex
 
 It works.
 
+```{figure} ../images/ch10-airplane-mode-demo.png
+:name: ch10-airplane-mode-demo
+:alt: Laptop in airplane mode with LM Studio running AI analysis — the disconnected proof
+:width: 100%
+
+**The Disconnected Proof.** Airplane mode on. WiFi off. Cellular off. LM Studio generating Lessons Learned output from a local Gemma 4 model. This is not a simulation — this is what forward-deployed AI capability looks like in practice.
+```
+
 You have AI-assisted analysis running with:
 - Zero internet connectivity
 - Zero cloud dependency
