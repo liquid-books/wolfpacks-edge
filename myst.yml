@@ -1,7 +1,7 @@
 version: 1
 project:
-  title: "The Wolfpack's Edge"
-  subtitle: "Mastering Google's AI Ecosystem for Lessons Learned, Special Operations Support, and Mission-Critical Decision Making"
+  title: "Mastering Google AI for Special Operations Professionals"
+  subtitle: "The Wolfpack's Edge — A Field Manual for the Lukos Team"
   authors:
     - name: Dr. Ernesto Lee
       affiliation: Miami Dade College
@@ -87,9 +87,9 @@ project:
         - file: chapters/app-c-skill-library.md
 
 site:
-  title: "The Wolfpack's Edge"
+  title: "Mastering Google AI for Special Operations Professionals"
   options:
-    logo_text: "The Wolfpack's Edge"
-    logo_url: "/"
+    logo_text: "Mastering Google AI"
+    logo_url: "/wolfpacks-edge/"
   parts:
     primary_sidebar_footer: primary-sidebar-footer.md
