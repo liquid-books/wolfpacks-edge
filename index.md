@@ -1,5 +1,5 @@
 ---
-title: "Mastering Google AI for Special Operations Professionals"
+title: "AI for Lukos Professionals"
 subtitle: "The Wolfpack's Edge — A Field Manual for the Lukos Team"
 ---
 
@@ -20,11 +20,11 @@ subtitle: "The Wolfpack's Edge — A Field Manual for the Lukos Team"
 
 ---
 
-# Mastering Google AI for Special Operations Professionals
+# AI for Lukos Professionals
 ## *The Wolfpack's Edge — A Field Manual for the Lukos Team*
 
 ```{image} images/cover.png
-:alt: Mastering Google AI for Special Operations Professionals — The Wolfpack's Edge
+:alt: AI for Lukos Professionals — The Wolfpack's Edge
 :width: 100%
 :align: center
 ```

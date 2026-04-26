@@ -1,6 +1,6 @@
 version: 1
 project:
-  title: "Mastering Google AI for Special Operations Professionals"
+  title: "AI for Lukos Professionals"
   subtitle: "The Wolfpack's Edge — A Field Manual for the Lukos Team"
   authors:
     - name: Dr. Ernesto Lee
@@ -87,9 +87,9 @@ project:
         - file: chapters/app-c-skill-library.md
 
 site:
-  title: "Mastering Google AI for Special Operations Professionals"
+  title: "AI for Lukos Professionals"
   options:
-    logo_text: "Mastering Google AI"
+    logo_text: "AI for Lukos Professionals"
     logo_url: "/wolfpacks-edge/"
   parts:
     primary_sidebar_footer: primary-sidebar-footer.md
