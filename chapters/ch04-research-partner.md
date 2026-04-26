@@ -21,9 +21,9 @@ Imagine you could generate a twenty-five-minute podcast-style briefing from thos
 
 Imagine you could generate a mind map of conceptual clusters from a year of training evaluations. Not after reading all of them. From the upload.
 
-That tool exists. It's free. You have a Google account. It's called **NotebookLM**.
+That tool exists. It's free. You have a Google account. It's called **[NotebookLM](https://notebooklm.google.com)**.
 
-And here's the thing that makes this chapter different from everything that came before it: NotebookLM was not accidentally useful for Lessons Learned work. It is *structurally aligned* with the Lessons Learned mission. Once you understand why, you will never go back to reading documents one at a time.
+And here's the thing that makes this chapter different from everything that came before it: [NotebookLM](https://notebooklm.google.com) was not accidentally useful for Lessons Learned work. It is *structurally aligned* with the Lessons Learned mission. Once you understand why, you will never go back to reading documents one at a time.
 
 Let's build that understanding — from the ground up.
 
@@ -39,30 +39,38 @@ Let's build that understanding — from the ground up.
 **The NotebookLM interface.** Three panels, one mission: grounded intelligence from your documents. Sources (left), Chat (center), Studio (right).
 ```
 
-Here is the single most important thing to understand about NotebookLM before you touch it:
+Here is the single most important thing to understand about [NotebookLM](https://notebooklm.google.com) before you touch it:
 
 **NotebookLM does not know anything about the world. It only knows what's in your notebook.**
 
 That's not a limitation. That's the feature.
 
-Every AI tool you've encountered so far — Gemini, ChatGPT, AI Studio — draws from a training corpus that includes a significant fraction of everything published on the internet before a cutoff date. That's extraordinarily powerful for general questions. "What are best practices for after-action reviews?" — Gemini has read thousands of papers, doctrines, and articles on that topic and can synthesize them brilliantly.
+Every AI tool you've encountered so far — [Gemini](https://gemini.google.com), ChatGPT, [AI Studio](https://aistudio.google.com) — draws from a training corpus that includes a significant fraction of everything published on the internet before a cutoff date. That's extraordinarily powerful for general questions. "What are best practices for after-action reviews?" — [Gemini](https://gemini.google.com) has read thousands of papers, doctrines, and articles on that topic and can synthesize them brilliantly.
 
 But it creates a serious problem: when you ask the model about *your specific programs, your specific exercises, your specific observations*, it doesn't know them. Worse, it might confidently generate something that sounds like it could be from your corpus but isn't. That's called **hallucination** — the model producing plausible-sounding but fabricated information. It's the AI equivalent of a briefer who fills in knowledge gaps with confident-sounding speculation.
 
-NotebookLM solves this problem with a fundamental constraint: it can only answer from the sources you provide, and it must cite every claim back to a specific passage in those sources.
+[NotebookLM](https://notebooklm.google.com) solves this problem with a fundamental constraint: it can only answer from the sources you provide, and it must cite every claim back to a specific passage in those sources.
 
 If the answer isn't in your documents, NotebookLM says so. Not confidently wrong. Just: *"I don't see that addressed in the sources provided."*
 
 That one behavior is worth more than a hundred features.
 
-### Powered by Gemini, Grounded in Your Sources
+### Powered by Gemini 3.1 Pro, Grounded in Your Sources
 
-Under the hood, NotebookLM is powered by Google's Gemini models. But instead of pointing Gemini at all its training knowledge, Google has built a layer that constrains the model to *only* the documents in your current notebook. This is called **grounding** — and it's what makes NotebookLM the most trustworthy AI tool for professional document work.
+```{figure} ../images/ch04-notebooklm-31pro.png
+:name: ch04-notebooklm-31pro
+:alt: Diagram showing Gemini 3.1 Pro powering NotebookLM for Google AI Pro and Ultra subscribers, with tier comparison showing model versions per tier
+:width: 100%
 
-The difference from public Gemini is profound:
+**Gemini 3.1 Pro in NotebookLM.** As of February 2026, Google AI Pro and Ultra subscribers access NotebookLM powered by Gemini 3.1 Pro. Free tier users receive an earlier Gemini model. The upgrade unlocks the most capable grounded research engine available. *(as of April 2026)*
+```
 
-- **Public Gemini:** "Draw on everything you know to answer this question." Vast knowledge. No citations. Potential for hallucination.
-- **NotebookLM:** "Draw *only* on these specific documents to answer this question." Limited scope. Mandatory citations. No hallucination about your content.
+Under the hood, [NotebookLM](https://notebooklm.google.com) is powered by Google's [Gemini](https://gemini.google.com) models. As of February 2026, **Google AI Pro and Ultra subscribers** access NotebookLM powered by **Gemini 3.1 Pro** — Google's most capable model. Free tier users receive an earlier Gemini model. But instead of pointing Gemini at all its training knowledge, Google has built a layer that constrains the model to *only* the documents in your current notebook. This is called **grounding** — and it's what makes [NotebookLM](https://notebooklm.google.com) the most trustworthy AI tool for professional document work.
+
+The difference from public [Gemini](https://gemini.google.com) is profound:
+
+- **Public [Gemini](https://gemini.google.com):** "Draw on everything you know to answer this question." Vast knowledge. No citations. Potential for hallucination.
+- **[NotebookLM](https://notebooklm.google.com):** "Draw *only* on these specific documents to answer this question." Limited scope. Mandatory citations. No hallucination about your content.
 
 For Lukos work — where accuracy is mission-critical and citations are professional requirements — this distinction is everything.
 
@@ -88,12 +96,12 @@ That's it. You're in.
 :alt: Split infographic contrasting public AI drawing from the entire internet (with hallucination risk) versus NotebookLM drawing only from uploaded sources (with mandatory citations)
 :width: 100%
 
-**The fundamental difference.** Public AI draws from everything and cites nothing. NotebookLM draws from your sources and cites everything. For professional Lessons Learned work, this is the only tool that counts.
+**The fundamental difference.** Public AI draws from everything and cites nothing. [NotebookLM](https://notebooklm.google.com) draws from your sources and cites everything. For professional Lessons Learned work, this is the only tool that counts.
 ```
 
 Let's have the honest conversation.
 
-There are many AI tools in the world. Most of them are useful. Some of them are remarkable. But NotebookLM occupies a unique position for one reason: **the Lessons Learned mission is structurally a document corpus problem, and NotebookLM is structurally a document corpus tool.**
+There are many AI tools in the world. Most of them are useful. Some of them are remarkable. But [NotebookLM](https://notebooklm.google.com) occupies a unique position for one reason: **the Lessons Learned mission is structurally a document corpus problem, and NotebookLM is structurally a document corpus tool.**
 
 Think about what the Lukos Lessons Learned Program actually is.
 
@@ -109,11 +117,19 @@ That process takes hours. Sometimes days. And when the senior leader asks a foll
 
 Now here's the scenario where everything changes.
 
-You take those same documents — let's say thirty AARs from the last two fiscal years, all focused on partner nation exercises. You upload them to a NotebookLM notebook. It takes ten minutes. Then you type:
+You take those same documents — let's say thirty AARs from the last two fiscal years, all focused on partner nation exercises. You upload them to a [NotebookLM](https://notebooklm.google.com) notebook. It takes ten minutes. Then you type:
 
 > *"What are the persistent challenges in partner nation interoperability at the tactical level across these AARs? Identify the top five themes and cite the specific source documents that support each theme."*
 
 In thirty seconds, you receive a structured response: five themes, each with a description, and each with inline citations like **[Source 3, p. 14]** and **[Source 11, p. 7]**. You click Source 3. You land on the exact paragraph. The claim is accurate. The citation is precise.
+
+```{figure} ../images/ch04-citation-click.png
+:name: ch04-citation-click
+:alt: Step-by-step illustration of clicking a citation in NotebookLM chat, with arrow pointing to the exact highlighted paragraph in the source document panel
+:width: 100%
+
+**Citation verification in action.** Every claim in NotebookLM's Chat panel is backed by a citation. Click any citation number and NotebookLM highlights the exact supporting paragraph in your source document. This is grounded AI — no fabrication, no guesswork. *(as of April 2026)*
+```
 
 That is not science fiction. That is Tuesday morning.
 
@@ -129,50 +145,44 @@ And here is the emotional truth — the thing that Lessons Learned practitioners
 
 **The work that goes into building a lessons learned corpus has historically been invisible.** The value is theoretical. "Somewhere in here is the answer to the problem you're about to make." But who has time to find it? The program manager has a deliverable due Friday. The ORSA is building a model. The J7 counterpart has twelve other contractors in the queue.
 
-NotebookLM makes that corpus *queryable*. The years of careful collection, coding, and maintenance suddenly have a user interface. The institutional knowledge your team has built becomes accessible at the speed of a question.
+[NotebookLM](https://notebooklm.google.com) makes that corpus *queryable*. The years of careful collection, coding, and maintenance suddenly have a user interface. The institutional knowledge your team has built becomes accessible at the speed of a question.
 
 That's the moment. That's why this chapter comes before any other AI tool in this book that Lukos hasn't already touched. Because **this is the one.**
 
 ---
 
-## 4.3 Free vs. Plus vs. Enterprise
+## 4.3 Free vs. Google AI Pro vs. Google AI Ultra
 
-NotebookLM comes in three tiers. Here's what each means for Lukos.
+NotebookLM comes in three tiers. Here's what each means for Lukos. *(Pricing and features as of April 2026; see [Google AI plans](https://one.google.com/about/ai-premium) for current details.)*
 
-| Feature | Free | NotebookLM Plus | Enterprise (Workspace) |
+| Feature | Free | [Google AI Pro](https://one.google.com/about/ai-premium) | [Google AI Ultra](https://one.google.com/about/ai-premium) |
 |---------|------|-----------------|------------------------|
+| **Gemini Model** | Earlier Gemini | Gemini 3.1 Pro | Gemini 3.1 Pro |
 | **Notebooks** | Unlimited | Unlimited | Unlimited |
 | **Sources per notebook** | 50 | 300 | 300+ |
 | **Pages per source** | 500 | 500 | 500 |
 | **Audio Overviews** | 3/day | Unlimited | Unlimited |
-| **Sharing** | View-only link | Collaborative editing | Full enterprise controls |
-| **Cost** | $0 | ~$20/mo | Google Workspace pricing |
+| **Studio outputs** | All types | All types | All types |
+| **Sharing** | View-only link | Collaborative editing | Collaborative editing |
+| **Cost** | $0 | ~$20/mo | ~$250/mo |
 | **Data residency / DLP** | Standard | Standard | Enterprise policies |
-| **Support** | Community | Priority | Enterprise SLA |
+| **Support** | Community | Priority | Priority+ |
 
 ### What Lukos Should Actually Use
 
-**Free tier:** For exploration, familiarization, and individual professional use with non-sensitive documents. Every analyst on the team should start here. The limits (50 sources, 3 audio overviews per day) are sufficient for learning the tool and running most individual research workflows.
+**Free tier:** For exploration, familiarization, and individual professional use with non-sensitive documents. Every analyst on the team should start here. The limits (50 sources, 3 audio overviews per day) are sufficient for learning the tool and running most individual research workflows. Access at [notebooklm.google.com](https://notebooklm.google.com).
 
-**NotebookLM Plus (~$20/month):** For production Lessons Learned work. The upgrade from 50 to 300 sources per notebook is the key unlock — it means you can load a full fiscal year of AARs into a single notebook rather than segmenting. Unlimited audio overviews matter when your team is generating briefings regularly. This is the tier for analysts whose primary job is research synthesis.
+**[Google AI Pro](https://one.google.com/about/ai-premium) (~$20/month):** For production Lessons Learned work. The upgrade from 50 to 300 sources per notebook is the key unlock — it means you can load a full fiscal year of AARs into a single notebook rather than segmenting. You also gain Gemini 3.1 Pro as the underlying model, which delivers meaningfully better synthesis quality on complex research questions. Unlimited audio overviews matter when your team is generating briefings regularly. This is the tier for analysts whose primary job is research synthesis.
 
-**Enterprise (Google Workspace):** For customer-facing work, data governed under contract requirements, or environments where your client has specific data handling policies. If Lukos is processing documents under a government contract with data residency requirements, the enterprise tier is the right answer. This is the "how do we deploy this for USSOCOM J7" conversation, not the "how do I use this personally" conversation.
+**[Google AI Ultra](https://one.google.com/about/ai-premium) (~$250/month):** For power users and teams with the highest production volume. Includes everything in Pro plus the highest usage limits and enterprise-grade support. For institutional deployment under government contract with data handling requirements, coordinate with your organization's Google Workspace administrator and contracting officers.
 
-**The progression for a Lukos team:** Everyone starts free. Power users and production analysts move to Plus. Institutional deployment for customer work goes through the enterprise conversation with contracting officers and the client's IT security team.
+**The progression for a Lukos team:** Everyone starts free. Production analysts move to Pro. Enterprise deployment for customer-facing work goes through the organizational conversation — not the personal subscription path.
 
 ---
 
 ## 4.4 The Three Panels — A Guided Tour
 
-Open NotebookLM on any notebook and you see three panels. Each has a specific job.
-
-```{figure} ../images/ch04-notebooklm-interface.png
-:name: ch04-three-panels
-:alt: Detailed view of the three-panel NotebookLM interface with annotations on each panel's function
-:width: 100%
-
-**Your three workspaces.** Sources feeds the intelligence. Chat applies it. Studio transforms it.
-```
+Open [NotebookLM](https://notebooklm.google.com) on any notebook and you see three panels. Each has a specific job.
 
 ### Panel 1: Sources — Where Intelligence Lives
 
@@ -193,7 +203,7 @@ The Sources panel (left side) is where you upload the documents that define your
 - Password-protected files it can't access
 - Real-time data (it indexes at upload time; the source doesn't update automatically)
 
-**The operational implication:** If your AARs live in a NIPR SharePoint or a classified system, you need to export them to an unclassified format before using NotebookLM. This is a deliberate process — and it should be. The classification discipline belongs with you, not the tool.
+**The operational implication:** If your AARs live in a NIPR SharePoint or a classified system, you need to export them to an unclassified format before using [NotebookLM](https://notebooklm.google.com). This is a deliberate process — and it should be. The classification discipline belongs with you, not the tool.
 
 **Adding sources:** Click the **"+"** button in the Sources panel, or drag and drop files directly into the panel. Each source gets a card with its title and a brief auto-generated summary. Click any source card to view its content.
 
@@ -225,9 +235,17 @@ That is what grounded AI looks like in practice. No speculation. No fabrication.
 
 ### Panel 3: Studio — The Transformation Engine
 
-The Studio panel (right side) is where NotebookLM becomes something different from any other AI tool on the market. This is where your document corpus gets transformed into new formats.
+The Studio panel (right side) is where [NotebookLM](https://notebooklm.google.com) becomes something different from any other AI tool on the market. This is where your document corpus gets transformed into new formats.
 
 We'll cover the full Studio arsenal in Section 4.5. For now: Studio is where audio overviews, mind maps, briefing docs, slide decks, and infographics live. Every output is generated from your sources — grounded, sourced, and ready for use.
+
+```{figure} ../images/ch04-sharing-notebook.png
+:name: ch04-sharing-notebook
+:alt: NotebookLM notebook sharing workflow showing a central notebook with share arrows going out to three team members at laptops, with a share dialog showing Viewer and Collaborator permission options
+:width: 100%
+
+**Collaborative research.** Share any NotebookLM notebook with teammates. Viewers can ask questions in Chat without adding sources. Collaborators can add sources and contribute to the corpus. Your research assistant becomes the team's research assistant. *(as of April 2026)*
+```
 
 ---
 
@@ -238,7 +256,7 @@ We'll cover the full Studio arsenal in Section 4.5. For now: Studio is where aud
 :alt: A capability grid showing all NotebookLM Studio output types with icons, descriptions, and Lukos use cases in a navy blue and gold color scheme
 :width: 100%
 
-**The Studio arsenal.** Nine output types, all grounded in your sources. Each one transforms the same corpus into a different format for a different audience.
+**The Studio arsenal.** Ten output types, all grounded in your sources. Each one transforms the same corpus into a different format for a different audience. *(as of April 2026)*
 ```
 
 The Studio panel is genuinely extraordinary. Let's walk through every output type — what it is, how to generate it, and the specific Lukos workflow it enables.
@@ -247,9 +265,9 @@ The Studio panel is genuinely extraordinary. Let's walk through every output typ
 
 ### Audio Overviews — Your AI Podcast Crew
 
-**What it is:** NotebookLM generates a podcast-style audio discussion of your document corpus. Two AI hosts have a natural conversation about the content of your notebook — discussing key findings, debating implications, asking each other questions, surfacing themes. It sounds like a professional podcast. Except the "topic" is your AARs.
+**What it is:** [NotebookLM](https://notebooklm.google.com) generates a podcast-style audio discussion of your document corpus. Two AI hosts have a natural conversation about the content of your notebook — discussing key findings, debating implications, asking each other questions, surfacing themes. It sounds like a professional podcast. Except the "topic" is your AARs.
 
-**The modes:**
+**The four modes** *(as of April 2026)*:
 - **Brief (~5 minutes):** High-level summary of the main themes. Good for a quick orientation.
 - **Standard (10–15 minutes):** Broader coverage with more depth on key findings.
 - **Deep Dive (20–30 minutes):** Full exploration of themes, including nuances, tensions, and implications. This is the flagship mode for serious research synthesis.
@@ -265,9 +283,9 @@ That's the "send the boss a podcast" pattern. We'll cover it in depth in Section
 
 ### Mind Maps — Pattern Detection at Machine Speed
 
-**What it is:** A visual representation of the conceptual structure of your document corpus. NotebookLM identifies the main themes, sub-themes, and relationships within your sources and renders them as an interactive visual map.
+**What it is:** A visual representation of the conceptual structure of your document corpus. [NotebookLM](https://notebooklm.google.com) identifies the main themes, sub-themes, and relationships within your sources and renders them as an interactive visual map.
 
-**Why it's the hidden gem:** Most people find the Audio Overview first and are blown away by it. But the analysts who use NotebookLM seriously — the ones who have run it against real document sets — will tell you the Mind Map is quietly the most powerful feature in the Studio.
+**Why it's the hidden gem:** Most people find the Audio Overview first and are blown away by it. But the analysts who use [NotebookLM](https://notebooklm.google.com) seriously — the ones who have run it against real document sets — will tell you the Mind Map is quietly the most powerful feature in the Studio.
 
 Here's why. When you read thirty documents sequentially, your brain is building a mental model of the conceptual landscape. That process takes hours and produces a map that lives only in your head. The Mind Map generates that same map — from the upload. Before you've read a single document.
 
@@ -307,7 +325,7 @@ Upload a year of training evaluations. Generate the Mind Map. The clusters that 
 
 ### Slide Decks — The Outline You've Always Wanted
 
-**What it is:** An outline-level slide deck generated from your sources. NotebookLM creates a structured presentation framework — slides, bullets, key points — that you then populate and refine in Google Slides.
+**What it is:** An outline-level slide deck generated from your sources. [NotebookLM](https://notebooklm.google.com) creates a structured presentation framework — slides, bullets, key points — that you then populate and refine in Google Slides.
 
 **The Lukos use case:** You've been asked to brief the customer on program findings. You have the source documents in a notebook. Generate the Slide Deck outline. You now have a structured starting point — not a blank slide — that reflects the actual content of your corpus. Refine and add visuals. Present.
 
@@ -323,9 +341,25 @@ Upload a year of training evaluations. Generate the Mind Map. The clusters that 
 
 ### Data Tables — Structure from Chaos
 
-**What it is:** NotebookLM extracts structured data from unstructured sources and formats it as a table. If your AARs consistently mention dates, programs, locations, or metrics — even in narrative form — the Data Table output can extract and organize them.
+**What it is:** [NotebookLM](https://notebooklm.google.com) extracts structured data from unstructured sources and formats it as a table. If your AARs consistently mention dates, programs, locations, or metrics — even in narrative form — the Data Table output can extract and organize them.
 
-**The Lukos use case:** You have thirty AARs, each mentioning training effectiveness ratings in narrative text. Generate a Data Table. NotebookLM attempts to extract the structured information. Review and verify the output — it won't be perfect, but it will get you most of the way there.
+```{figure} ../images/ch04-data-table-extraction.png
+:name: ch04-data-table-extraction
+:alt: Illustration of NotebookLM's Data Table extraction process showing messy narrative AAR text on the left transforming into a clean structured table with Program, Date, Rating, Country, and Key Finding columns on the right
+:width: 100%
+
+**Data Table extraction.** Narrative AARs contain structured data buried in prose — training effectiveness ratings, program names, dates, locations. NotebookLM's Data Table output surfaces that structure. Review and verify the output; it will get you most of the way there. *(as of April 2026)*
+```
+
+**The Lukos use case:** You have thirty AARs, each mentioning training effectiveness ratings in narrative text. Generate a Data Table. [NotebookLM](https://notebooklm.google.com) attempts to extract the structured information. Review and verify the output — it won't be perfect, but it will get you most of the way there.
+
+---
+
+### Video Overviews — Visual Briefings from Your Corpus
+
+**What it is:** Similar to Audio Overviews but with an accompanying visual presentation layer. [NotebookLM](https://notebooklm.google.com) generates a narrated video-style briefing from your document corpus.
+
+**The Lukos use case:** When your audience needs a visual format for self-service consumption — a Video Overview can serve as an asynchronous briefing product that combines the accessibility of audio with a visual display.
 
 ---
 
@@ -347,7 +381,7 @@ Upload a year of training evaluations. Generate the Mind Map. The clusters that 
 **How RAG works.** Your question retrieves relevant passages from your sources. Those passages ground the model's answer. Every claim traces back to a specific document. That's RAG — and it's why NotebookLM cannot hallucinate about your documents.
 ```
 
-Let me explain the technology behind what NotebookLM does — without making it technical.
+Let me explain the technology behind what [NotebookLM](https://notebooklm.google.com) does — without making it technical.
 
 Here is the analogy.
 
@@ -355,15 +389,15 @@ Imagine a brilliant analyst sits down at a desk. In front of them is a stack of 
 
 Now imagine this analyst can read all thirty documents in milliseconds. Can simultaneously compare passages across all sources. Can spot thematic patterns that would take a human a week to see. And will *always* cite — never once will they say something that isn't on a sticky note.
 
-**That is RAG. That is NotebookLM.**
+**That is RAG. That is [NotebookLM](https://notebooklm.google.com).**
 
-RAG stands for **Retrieval-Augmented Generation**. Here's what actually happens when you ask NotebookLM a question:
+RAG stands for **Retrieval-Augmented Generation**. Here's what actually happens when you ask [NotebookLM](https://notebooklm.google.com) a question:
 
 1. **Indexing:** When you upload your sources, NotebookLM breaks them into chunks and creates a searchable index — think of it as reading all the documents and creating a card catalog at superhuman speed.
 
 2. **Retrieval:** When you ask a question, the system first *retrieves* the most relevant chunks from your source documents — the passages most likely to contain the answer.
 
-3. **Grounded Generation:** The AI model (Gemini, under the hood) then generates an answer using *only* those retrieved passages as its reference material. The citations you see are the passages it retrieved.
+3. **Grounded Generation:** The AI model ([Gemini](https://gemini.google.com), under the hood) then generates an answer using *only* those retrieved passages as its reference material. The citations you see are the passages it retrieved.
 
 Because the model is constrained to retrieved passages from *your sources*, it cannot fabricate information. If the information isn't in the retrieved passages, the model has nothing to generate from. It says: "I don't see this addressed in the provided sources."
 
@@ -375,25 +409,25 @@ Here is the insight that should make every Lessons Learned practitioner sit up s
 
 What does a Lessons Learned program do? It collects observations from operations and exercises. It codes and organizes them. It stores them in a corpus. And when a new question arises — "What do we know about this type of challenge?" — someone queries that corpus and synthesizes an answer.
 
-That is retrieval-augmented generation. It's what you've been doing by hand for twenty years. NotebookLM is the same mission, running at machine speed.
+That is retrieval-augmented generation. It's what you've been doing by hand for twenty years. [NotebookLM](https://notebooklm.google.com) is the same mission, running at machine speed.
 
 ---
 
 ## 4.7 The Limits of RAG — What NotebookLM Cannot Do
 
-```{figure} ../images/ch04-source-curation.png
-:name: ch04-source-curation
-:alt: Infographic illustrating the curator's advantage concept showing how high-quality curated sources produce exponentially better AI outputs compared to low-quality or incomplete corpora
+```{figure} ../images/ch04-corpus-quality-pyramid.png
+:name: ch04-corpus-quality-pyramid
+:alt: The Curator's Advantage pyramid showing three tiers of corpus quality — Garbage In (red, bottom), Adequate Corpus (yellow, middle), and Curated Corpus (green, top) — with corresponding AI output quality bars showing exponential improvement
 :width: 100%
 
-**The curator's advantage.** NotebookLM is only as good as its sources. The analyst who maintains a clean, well-organized corpus gets exponentially more value from AI tools. Source discipline is a competitive advantage.
+**The Curator's Advantage.** AI output quality scales with corpus quality — not linearly, but exponentially. The analyst who maintains a clean, complete, well-organized document corpus gets dramatically more value from NotebookLM than one who uploads whatever is at hand. Source discipline is a competitive advantage.
 ```
 
-Understanding the limits of any tool is how you use it well. Here is what NotebookLM cannot do — and what that means strategically for Lukos.
+Understanding the limits of any tool is how you use it well. Here is what [NotebookLM](https://notebooklm.google.com) cannot do — and what that means strategically for Lukos.
 
 ### Garbage In, Garbage Out — At AI Speed
 
-NotebookLM is only as smart as its sources. If your AARs are poorly written, use inconsistent terminology, or omit key information, NotebookLM will faithfully synthesize those limitations at scale. Bad sources produce bad answers.
+[NotebookLM](https://notebooklm.google.com) is only as smart as its sources. If your AARs are poorly written, use inconsistent terminology, or omit key information, NotebookLM will faithfully synthesize those limitations at scale. Bad sources produce bad answers.
 
 More importantly: **missing sources produce missing answers.** If the twelve most insightful AARs from the last two years aren't in the notebook, the analysis will miss twelve data points. The model cannot tell you about documents it doesn't have.
 
@@ -405,16 +439,16 @@ This is perhaps the most important strategic insight in this chapter:
 
 **In an AI-assisted Lessons Learned environment, corpus curation is a competitive differentiator.**
 
-The analyst who spends time maintaining a clean, well-organized, complete document corpus will get exponentially more value from NotebookLM than the analyst who uploads whatever they can find quickly. The organization that has maintained rigorous collection discipline for years has a corpus that becomes a strategic asset when you put an AI research layer on top of it.
+The analyst who spends time maintaining a clean, well-organized, complete document corpus will get exponentially more value from [NotebookLM](https://notebooklm.google.com) than the analyst who uploads whatever they can find quickly. The organization that has maintained rigorous collection discipline for years has a corpus that becomes a strategic asset when you put an AI research layer on top of it.
 
-The Lukos competitive advantage is not *using* NotebookLM. Every contractor with a Google account can use NotebookLM. The advantage is having a **better-curated corpus than anyone else** — and then using NotebookLM to query it.
+The Lukos competitive advantage is not *using* NotebookLM. Every contractor with a Google account can use [NotebookLM](https://notebooklm.google.com). The advantage is having a **better-curated corpus than anyone else** — and then using NotebookLM to query it.
 
 ### Other Limits to Know
 
 - **No live data:** Sources are indexed at upload time. If you add a URL, NotebookLM fetches it once and doesn't update. For rapidly evolving topics, you need to re-add updated sources.
 - **No mid-session source updates:** If you upload a new source while a session is active, ask NotebookLM to re-orient to the new source before querying across the full notebook.
-- **No classified access:** NotebookLM is an unclassified cloud tool. Classification discipline belongs with you. Export to unclassified before uploading.
-- **50-source limit on free tier:** For large corpora, you need Plus. See Section 4.3.
+- **No classified access:** [NotebookLM](https://notebooklm.google.com) is an unclassified cloud tool. Classification discipline belongs with you. Export to unclassified before uploading.
+- **50-source limit on free tier:** For large corpora, you need [Google AI Pro](https://one.google.com/about/ai-premium). See Section 4.3.
 - **Source quality matters:** Scanned PDFs with poor OCR quality produce lower-fidelity indexing. Where possible, use text-searchable PDFs.
 
 ---
@@ -423,10 +457,10 @@ The Lukos competitive advantage is not *using* NotebookLM. Every contractor with
 
 ```{figure} ../images/ch04-audio-overview.png
 :name: ch04-audio-overview
-:alt: Workflow diagram showing the Audio Overview process from document upload through generation to the podcast player with modes labeled (Brief, Standard, Deep Dive, Critique)
+:alt: Workflow diagram showing the Audio Overview process from document upload through generation to the podcast player with all four modes labeled (Brief, Standard, Deep Dive, Critique)
 :width: 100%
 
-**The Audio Overview workflow.** Upload your sources, select your mode, generate, and distribute. The Deep Dive transforms a document corpus into a 25-minute briefing your senior leader can listen to on the commute in.
+**The Audio Overview workflow.** Upload your sources, select your mode, generate, and distribute. The Deep Dive transforms a document corpus into a 25-minute briefing your senior leader can listen to on the commute in. Critique mode provides free red-teaming for any analytical product.
 ```
 
 Of all the Studio outputs, Audio Overviews deserve their own section. Not because they're technically the most sophisticated — the RAG architecture is — but because they change the *distribution pattern* for intelligence products. And that changes everything.
@@ -447,17 +481,25 @@ That is a fundamentally different distribution pattern for intelligence products
 
 Here is the exact process:
 
-**Step 1:** Build your NotebookLM notebook with the source documents for the briefing topic. For a program review, this might be: the quarterly AARs, relevant doctrine references, your own analysis document, and any previous briefing materials.
+**Step 1:** Build your [NotebookLM](https://notebooklm.google.com) notebook with the source documents for the briefing topic. For a program review, this might be: the quarterly AARs, relevant doctrine references, your own analysis document, and any previous briefing materials.
 
 **Step 2:** In the Studio panel, click **"Audio Overview"**, select **"Deep Dive"**, and click **"Generate"**. It will take 3–5 minutes. Go review the sources or draft your agenda for the working group.
 
-**Step 3:** When the Audio Overview is ready, click the **"Share"** button on the audio player. NotebookLM generates a shareable link. Send that link to your senior leader with a single line of context: *"15-minute briefing on Q2 JCET findings — covers the main themes and the top three action items."*
+**Step 3:** When the Audio Overview is ready, click the **"Share"** button on the audio player. [NotebookLM](https://notebooklm.google.com) generates a shareable link. Send that link to your senior leader with a single line of context: *"15-minute briefing on Q2 JCET findings — covers the main themes and the top three action items."*
 
 **Step 4:** They click the link. They press play. They're briefed.
 
 **Step 5 (optional but powerful):** Also share the notebook itself. Now they can ask follow-up questions in the Chat panel — grounded, cited answers from the same sources the audio was generated from. The briefing has a built-in research capability attached to it.
 
 ### Critique Mode — Free Red-Teaming for Any Document
+
+```{figure} ../images/ch04-critique-mode.png
+:name: ch04-critique-mode
+:alt: Illustration of NotebookLM Critique Audio Overview mode showing two AI host icons facing each other with debate arrows, speech bubbles challenging claims, and a waveform audio player labeled CRITIQUE MODE below
+:width: 100%
+
+**Critique Mode: free red-teaming.** Select Critique when generating an Audio Overview and the two AI hosts actively challenge the claims in your document — surfacing unsupported assertions, alternative interpretations, and logical gaps. Run Critique on any draft deliverable before it goes to the customer. *(as of April 2026)*
+```
 
 Here is a feature that almost nobody discovers on their own, and it is worth the price of admission alone.
 
@@ -467,7 +509,7 @@ What happens: the two AI hosts read your document — your conclusions, your rec
 
 This is a **free red-team** for any analytical product.
 
-Before you send a significant deliverable to the customer, put it in a NotebookLM notebook and generate a Critique Overview. Listen for the objections. If the AI can identify a weak claim or a logical gap, so can your program manager, your J7 counterpart, or your contracting officer. Fix the gaps before the brief.
+Before you send a significant deliverable to the customer, put it in a [NotebookLM](https://notebooklm.google.com) notebook and generate a Critique Overview. Listen for the objections. If the AI can identify a weak claim or a logical gap, so can your program manager, your J7 counterpart, or your contracting officer. Fix the gaps before the brief.
 
 This workflow transforms the quality control process. Instead of hoping a colleague has time to red-team your document, you get a structured critique in five minutes.
 
@@ -501,7 +543,7 @@ Before the hands-on labs, let's see the full workflow as a single operational pi
 **The Setup Phase (once per project):**
 1. Identify the research question or deliverable
 2. Curate the relevant document corpus — AARs, doctrine, previous analysis, relevant references
-3. Create a named NotebookLM notebook for the project
+3. Create a named [NotebookLM](https://notebooklm.google.com) notebook for the project
 4. Upload all sources (10–20 minutes for a typical program review set)
 5. Generate the Mind Map to orient to the corpus structure
 
@@ -523,7 +565,7 @@ Before the hands-on labs, let's see the full workflow as a single operational pi
 2. Distribute the written deliverable with citations intact
 3. Provide the shared notebook as a living reference for program stakeholders
 
-This is what a NotebookLM-powered research practice looks like. The analyst is still doing the judgment work — validating, contextualizing, deciding what matters. The AI is handling the extraction, retrieval, synthesis, and formatting that previously consumed 80% of the timeline.
+This is what a [NotebookLM](https://notebooklm.google.com)-powered research practice looks like. The analyst is still doing the judgment work — validating, contextualizing, deciding what matters. The AI is handling the extraction, retrieval, synthesis, and formatting that previously consumed 80% of the timeline.
 
 ---
 
@@ -537,7 +579,7 @@ This is what a NotebookLM-powered research practice looks like. The analyst is s
 **The mind map in action.** Conceptual clusters from an AAR corpus — visible at a glance, before reading a single document. Each node is clickable and links back to source material.
 ```
 
-By this point in the course, you've worked with Gemini in Chapter 2 and explored AI Studio in Chapter 3. This chapter marks a shift: you're no longer just prompting a general AI. You're building a grounded research system from your own documents. These labs are designed to produce outputs you'll actually use after today.
+By this point in the course, you've worked with [Gemini](https://gemini.google.com) in Chapter 2 and explored [AI Studio](https://aistudio.google.com) in Chapter 3. This chapter marks a shift: you're no longer just prompting a general AI. You're building a grounded research system from your own documents. These labs are designed to produce outputs you'll actually use after today.
 
 ---
 
@@ -575,7 +617,7 @@ What does JP 3-0 say about the role of joint intelligence in shaping the operati
 
 **Step 6:** You are now looking at the exact passage from JP 3-0 that supported the claim. Read the paragraph. Confirm the AI's characterization is accurate.
 
-**✅ Success looks like:** A Chat response with at least one inline citation marker (blue number or source reference). You click it. NotebookLM highlights the exact passage in the source document. The AI's claim matches what the document says.
+**✅ Success looks like:** A Chat response with at least one inline citation marker (blue number or source reference). You click it. [NotebookLM](https://notebooklm.google.com) highlights the exact passage in the source document. The AI's claim matches what the document says.
 
 ---
 
@@ -721,7 +763,7 @@ Which source provides the most detailed guidance on [specific subtopic]? Summari
 What gaps exist in the sources in this notebook — what important questions are NOT addressed by any of these documents?
 ```
 
-Note how the third question tests the limits of the notebook — NotebookLM should identify what's not there.
+Note how the third question tests the limits of the notebook — [NotebookLM](https://notebooklm.google.com) should identify what's not there.
 
 **Step 3:** Review the citations in all three responses. Click at least three citations and verify them against the source text.
 
@@ -747,19 +789,21 @@ Note how the third question tests the limits of the notebook — NotebookLM shou
 
 ## Chapter Summary: The Research Partner
 
-NotebookLM is not a general-purpose AI. It is a specialized research partner for exactly the kind of work Lukos does.
+[NotebookLM](https://notebooklm.google.com) is not a general-purpose AI. It is a specialized research partner for exactly the kind of work Lukos does.
 
 The fundamental insight of this chapter:
 
 - **Grounding beats hallucination.** NotebookLM's constraint to your sources is a feature, not a limitation. In professional Lessons Learned work, a cited answer you can verify beats a confident answer you cannot.
 
-- **The Lessons Learned corpus is an asset.** Years of AAR collection, coding, and maintenance produced a document corpus. NotebookLM gives that corpus a research interface. The work that seemed only theoretically valuable is now immediately queryable.
+- **The Lessons Learned corpus is an asset.** Years of AAR collection, coding, and maintenance produced a document corpus. [NotebookLM](https://notebooklm.google.com) gives that corpus a research interface. The work that seemed only theoretically valuable is now immediately queryable.
 
-- **Audio Overviews change the distribution model.** Senior leaders who won't read thirty pages will listen to a seventeen-minute podcast. The same intelligence product, a fundamentally different delivery mechanism.
+- **Audio Overviews change the distribution model.** Senior leaders who won't read thirty pages will listen to a seventeen-minute podcast. The same intelligence product, a fundamentally different delivery mechanism. Four modes: Brief, Standard, Deep Dive, and Critique.
 
 - **Corpus curation is a competitive differentiator.** The analyst with the better-organized document set gets exponentially more value from AI tools. Source discipline is not just good practice — it's a strategic advantage.
 
-- **RAG is the technology behind all of this.** Your question retrieves relevant passages from your sources. Those passages ground the answer. The citations you see are the evidence trail. This is why NotebookLM cannot hallucinate about your documents.
+- **RAG is the technology behind all of this.** Your question retrieves relevant passages from your sources. Those passages ground the answer. The citations you see are the evidence trail. This is why [NotebookLM](https://notebooklm.google.com) cannot hallucinate about your documents.
+
+- **Gemini 3.1 Pro is available for [Google AI Pro and Ultra subscribers](https://one.google.com/about/ai-premium).** Free tier users get an earlier Gemini model. The upgrade delivers meaningfully better synthesis on complex multi-document research. *(as of April 2026)*
 
 The mission-critical question as you leave this chapter is not "how do I use NotebookLM?" You know that now. The question is: **what should go in my first production notebook?**
 
@@ -774,19 +818,21 @@ The research partner is ready when you are.
 
 **Chapter 4 Key Takeaways:**
 
-1. **NotebookLM is grounded AI** — it draws *only* from your sources and cites *every* claim. This is the opposite of ChatGPT/Gemini, which draw from everything and cite nothing.
+1. **NotebookLM is grounded AI** — it draws *only* from your sources and cites *every* claim. This is the opposite of [Gemini](https://gemini.google.com)/ChatGPT, which draw from everything and cite nothing.
 
-2. **The Lessons Learned mission is a RAG problem.** NotebookLM was built for exactly the corpus research work Lukos already does.
+2. **The Lessons Learned mission is a RAG problem.** [NotebookLM](https://notebooklm.google.com) was built for exactly the corpus research work Lukos already does.
 
-3. **The Studio panel has nine output types** — Audio Overviews, Mind Maps, Briefing Docs, Study Guides, Quizzes, Slide Decks, Infographics, Data Tables, and Reports. Each transforms your corpus into a different format for a different audience.
+3. **The Studio panel has ten output types** — Audio Overviews (Brief/Standard/Deep Dive/Critique), Video Overviews, Mind Maps, Briefing Docs, Study Guides, Quizzes, Slide Decks, Infographics, Data Tables, and Reports. Each transforms your corpus into a different format for a different audience.
 
 4. **Critique mode is free red-teaming** — generate a Critique Audio Overview from your own analysis document before you submit it.
 
 5. **Corpus quality is a competitive advantage** — the analyst who maintains a clean, complete document set gets exponentially more value from AI tools.
+
+6. **[Google AI Pro](https://one.google.com/about/ai-premium) unlocks Gemini 3.1 Pro** in NotebookLM, along with 300 sources per notebook and unlimited Audio Overviews. *(as of April 2026)*
 
 **Next Chapter:** Chapter 5 moves beyond the individual notebook to enterprise-scale search — Vertex AI Search, federated document intelligence, and how to build a production knowledge management system for the Lukos program portfolio.
 ```
 
 ---
 
-*NotebookLM is available at no cost with any Google account at [notebooklm.google.com](https://notebooklm.google.com). NotebookLM Plus is available as a subscription upgrade from within the tool. Enterprise deployment through Google Workspace requires coordination with your organization's Google Workspace administrator.*
+*[NotebookLM](https://notebooklm.google.com) is available at no cost with any Google account. [Google AI Pro and Ultra plans](https://one.google.com/about/ai-premium) unlock Gemini 3.1 Pro, 300 sources per notebook, and unlimited Audio Overviews. Enterprise deployment requires coordination with your organization's Google Workspace administrator. Features described as of April 2026.*

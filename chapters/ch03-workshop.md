@@ -11,9 +11,9 @@ description: "Google AI Studio from the ground up. The knobs, the tools, the mod
 
 You've met the field operative. Now let's go deeper.
 
-**Gemini at gemini.google.com** is where you talk to AI. It's polished, ready to go, and built for conversation. But there's another place in the Google AI ecosystem — a place most people on your team have never heard of — where the real configuration happens. Where you set the rules before the conversation starts. Where you choose the model, tune the settings, plug in real-world tools, and build applications without writing a line of code.
+**Gemini at [gemini.google.com](https://gemini.google.com)** is where you talk to AI. It's polished, ready to go, and built for conversation. But there's another place in the Google AI ecosystem — a place most people on your team have never heard of — where the real configuration happens. Where you set the rules before the conversation starts. Where you choose the model, tune the settings, plug in real-world tools, and build applications without writing a line of code.
 
-That place is **Google AI Studio.**
+That place is **[Google AI Studio](https://aistudio.google.com).**
 
 And once you've spent an hour there, you'll never think about AI the same way.
 
@@ -27,9 +27,9 @@ Let's get to work.
 
 Here's an analogy that will make the whole chapter click into place.
 
-Imagine Gemini at gemini.google.com as your **field operative** — trained, capable, deployed. You send it prompts, it executes. Clean, fast, purpose-built for mission work.
+Imagine Gemini at [gemini.google.com](https://gemini.google.com) as your **field operative** — trained, capable, deployed. You send it prompts, it executes. Clean, fast, purpose-built for mission work.
 
-Now imagine **Google AI Studio** as the **gunsmith's bench.**
+Now imagine **[Google AI Studio](https://aistudio.google.com)** as the **gunsmith's bench.**
 
 Before the field operative ships out, someone had to fit the weapon to the operator. Calibrate the sights. Select the right ammunition for the environment. Maybe add an optic or a suppressor. That work doesn't happen in the field — it happens at the bench, deliberately, before the mission. The gunsmith doesn't fight; the gunsmith makes sure that what does fight is configured exactly right.
 
@@ -107,6 +107,13 @@ Here's why this is powerful: imagine you're building an AI assistant for your Le
 
 They're also **invisible to the conversation.** The person using the tool sees only the chat interface. They don't see the System Instructions. The AI just behaves the way you configured it to behave, consistently, every time.
 
+```{figure} ../images/ch03-system-instructions-example.png
+:alt: System instructions example showing labeled components — persona, format, tone, OIL structure, BLUF requirement — flowing to consistent AI outputs
+:width: 100%
+
+**Figure 3.3 — Anatomy of a System Instruction.** Each component of a well-crafted system instruction serves a distinct purpose. Persona defines who the AI is. Format sets the output structure. Tone governs register. Constraints enforce quality standards.
+```
+
 ```{admonition} 🎯 Lukos Reference — Full System Instruction Example
 :class: important
 
@@ -157,7 +164,7 @@ Think of Temperature like this: imagine the confidence dial on a new analyst.
 :alt: Temperature spectrum infographic from 0 (deterministic/precise) to 2 (creative/random) with use cases at each level
 :width: 100%
 
-**Figure 3.3 — The Temperature Dial.** From deterministic precision at 0 to unconstrained creativity at 2. The Lukos rule: under 0.3 for analysis and formal outputs; 0.7 and above for brainstorming and ideation.
+**Figure 3.4 — The Temperature Dial.** From deterministic precision at 0 to unconstrained creativity at 2. Temperature 2 is the maximum — not 1.0. The Lukos rule: under 0.3 for analysis and formal outputs; 0.7 and above for brainstorming and ideation.
 ```
 
 ```{admonition} 🎯 The Lukos Temperature Rule
@@ -185,6 +192,13 @@ Here's the intuition: when you ask someone a simple question, they answer immedi
 **Thinking Level does exactly that for the AI.** Higher thinking means the model spends more internal processing on your question before generating the response. The output is more accurate, more nuanced, more likely to catch the thing you didn't think to ask about.
 
 The tradeoff: **higher thinking = slower response and higher API cost.** At Low, the model responds in seconds. At High, it can take 20–60 seconds for complex queries.
+
+```{figure} ../images/ch03-thinking-levels.png
+:alt: Three-tier thinking level comparison showing Low/Medium/High with response times, use cases, and cost-quality tradeoff graph
+:width: 100%
+
+**Figure 3.5 — The Thinking Budget.** Low thinking for speed, High thinking for depth. The tradeoff is explicit: every step up the thinking ladder costs time and tokens but delivers meaningfully better outputs for complex tasks.
+```
 
 ```{admonition} 🎯 Lukos Thinking Level Guide
 :class: tip
@@ -224,7 +238,7 @@ That's not text generation anymore. That's a thinking, working, capable AI teamm
 :alt: Four AI Studio tools shown as a capability grid — Structured Outputs, Code Execution, Google Search, URL Context
 :width: 100%
 
-**Figure 3.4 — The Four Tools.** Each tool transforms what AI can do. Structured Outputs make it machine-readable. Code Execution makes math reliable. Google Search makes it current. URL Context makes it targeted.
+**Figure 3.6 — The Four Tools.** Each tool transforms what AI can do. Structured Outputs make it machine-readable. Code Execution makes math reliable. Google Search makes it current. URL Context makes it targeted.
 ```
 
 ### Structured Outputs — The Killer Feature for Analysts
@@ -249,7 +263,7 @@ The model returns clean, structured data — every observation extracted, every 
 :alt: Diagram showing raw AAR text flowing in on the left, structured JSON observations coming out on the right
 :width: 100%
 
-**Figure 3.5 — The Extraction Pipeline.** Raw AAR text in. Structured, machine-readable observation data out. What used to take an analyst two hours now takes two minutes.
+**Figure 3.7 — The Extraction Pipeline.** Raw AAR text in. Structured, machine-readable observation data out. What used to take an analyst two hours now takes two minutes.
 ```
 
 This is the tool that moves Lukos from "AI helps me write things" to "AI processes and structures mission data." That's a different order of magnitude.
@@ -288,6 +302,13 @@ The Lukos use cases:
 
 **When to turn it off:** Grounding adds latency (the model has to search, retrieve, and process results) and cost. For work where you're analyzing your own documents — AARs, internal reports, proprietary data — grounding with web search adds nothing and slows you down. Turn it off for internal document work. Turn it on when you need current external information.
 
+```{figure} ../images/ch03-grounding-comparison.png
+:alt: Side-by-side comparison of grounded vs ungrounded AI output — grounded shows citations and current data, ungrounded is faster for internal documents
+:width: 100%
+
+**Figure 3.8 — Grounded vs. Ungrounded.** Grounding with Google Search adds real-time citations and current information. For internal document analysis, it's overhead. For external policy and current events, it's essential. Know when to flip the switch.
+```
+
 ### URL Context — Read This Specific Document
 
 **URL Context** lets you hand the model a web address and have it read that page deeply before responding. Not a search — a direct read of a specific document.
@@ -316,35 +337,53 @@ You don't need to build this in week one. But understanding it exists changes yo
 
 Not every mission calls for the same weapon. You don't bring the M110 to a close-quarters drill. AI models are the same: different models optimized for different tasks, with different tradeoffs of accuracy, speed, and cost.
 
-AI Studio gives you access to the full Gemini model family — and understanding who to reach for when is an operational skill.
+AI Studio gives you access to the full Gemini model family — and understanding who to reach for when is an operational skill. The full current model list lives at **[ai.google.dev/gemini-api/docs/models](https://ai.google.dev/gemini-api/docs/models)**.
 
 ```{figure} ../images/ch03-model-carousel.png
 :alt: Gemini model family arranged by capability tier — Pro, Flash, Flash Lite — with Lukos use cases for each
 :width: 100%
 
-**Figure 3.6 — The Model Carousel.** From high-accuracy strategic analysis (Pro) to high-throughput bulk processing (Flash Lite). Matching the model to the task is the analyst's skill.
+**Figure 3.9 — The Model Carousel.** From high-accuracy strategic analysis (Pro) to high-throughput bulk processing (Flash Lite). Matching the model to the task is the analyst's skill.
 ```
 
-### Gemini Pro — The Brain
+### Gemini 3.1 Pro — The Brain
 
-**Gemini 2.5 Pro** is the flagship. It has the largest context window (up to 1 million tokens — enough to hold roughly 700,000 words, or about 2,000 pages of text), the highest accuracy on complex reasoning tasks, and the most sophisticated multi-step analysis capabilities.
+**[Gemini 3.1 Pro](https://aistudio.google.com/prompts/new_chat?model=gemini-3.1-pro-preview)** is Google's most advanced model as of early 2026, available in Preview in AI Studio. It delivers the highest benchmark scores in the Gemini family — including ARC-AGI-2 (novel problem-solving) and GPQA (expert-level reasoning) — and is the right choice when accuracy and depth matter most.
 
-**When to use Pro:**
+```{figure} ../images/ch03-gemini-31-pro-benchmarks.png
+:alt: Benchmark comparison chart showing Gemini 3.1 Pro and Gemini 3 Flash scores on ARC-AGI-2 and GPQA versus competitor models
+:width: 100%
+
+**Figure 3.10 — Gemini 3.1 Pro Benchmarks.** Gemini 3.1 Pro leads on complex reasoning (ARC-AGI-2) while Gemini 3 Flash's GPQA score of 90.4% exceeds older flagship models from any vendor. Benchmark scores from [ai.google.dev/gemini-api/docs/changelog](https://ai.google.dev/gemini-api/docs/changelog).
+```
+
+Gemini 3.1 Pro has the largest context window in the family — enough to hold hundreds of pages of text in a single session — and the most sophisticated multi-step analysis capabilities.
+
+**When to use 3.1 Pro:**
 - Complex, multi-document analysis requiring synthesis across many sources
 - Long AARs requiring deep extraction and pattern identification
 - Strategic assessments going to senior leadership
 - Any analysis where accuracy matters more than speed
 - Tasks requiring the highest level of nuance and judgment
 
-**The tradeoff:** Pro is slower than Flash and costs more per token in API usage. For one-off complex tasks, this is irrelevant. For bulk processing of hundreds of documents, use Flash.
+**The tradeoff:** 3.1 Pro is slower than Flash and costs more per token in API usage. For one-off complex tasks, this is irrelevant. For bulk processing of hundreds of documents, use Flash.
 
-**Lukos example:** "Synthesize these twelve AAR documents from the last three exercises and identify systemic patterns in coordination failures." That's a Pro task — you want the brain engaged, even if it takes 45 seconds.
+**Lukos example:** "Synthesize these twelve AAR documents from the last three exercises and identify systemic patterns in coordination failures." That's a 3.1 Pro task — you want the brain fully engaged, even if it takes 45 seconds.
 
-### Gemini Flash — The Workhorse
+### Gemini 3 Pro — The Production Workhorse
 
-**Gemini 2.5 Flash** is the model you'll use most often. It's fast, capable, and excellent for the high-volume, steady-state analytical work that defines a Lessons Learned operation.
+**Gemini 3 Pro** is the GA (generally available) flagship — meaning it's out of preview and ready for production use. When you need Gemini's full analytical power in a stable, production-quality deployment, 3 Pro is your anchor.
 
-Flash runs at a fraction of Pro's cost and latency while still delivering genuinely impressive reasoning. For 80% of Lukos use cases, Flash is the right call.
+**When to use 3 Pro:**
+- Production pipelines where stability matters more than cutting-edge preview features
+- Accuracy-critical outputs at scale
+- Any workflow where 3.1 Pro preview access might be intermittent
+
+### Gemini 3 Flash — The Daily Driver
+
+**Gemini 3 Flash** is the model you'll use most often. It's fast, exceptionally capable, and purpose-built for the high-volume, steady-state analytical work that defines a Lessons Learned operation. Its GPQA score of 90.4% exceeds what older flagship models achieved — this is not a "lite" model in any meaningful sense.
+
+Flash costs approximately $0.50 per million tokens and runs at a fraction of Pro's latency while still delivering genuinely impressive reasoning. For 80% of Lukos use cases, Flash is the right call.
 
 **When to use Flash:**
 - High-volume first-pass classification of observation sets
@@ -355,16 +394,39 @@ Flash runs at a fraction of Pro's cost and latency while still delivering genuin
 
 **Lukos example:** "I have 200 observation entries from the quarterly exercise. Classify each one by category (Tactical, Technical, Leadership, Coordination, Equipment) and flag anything that needs analyst review." That's a Flash task — volume and speed matter, and Flash handles it with room to spare.
 
-### Flash Lite — High Throughput
+### Gemini 3.1 Flash-Lite — High Throughput
 
-**Gemini Flash Lite** is optimized for the highest possible throughput at the lowest cost. It sacrifices some reasoning depth for speed and scalability.
+**Gemini 3.1 Flash-Lite** (Preview, ~$0.25/1M tokens) is optimized for the highest possible throughput at the lowest cost. It sacrifices some reasoning depth for speed and scalability.
 
-**When to use Flash Lite:**
+**When to use Flash-Lite:**
 - Bulk classification of very large datasets (thousands of entries)
 - Simple extraction tasks where the schema is rigid and the task is unambiguous
 - Preprocessing pipelines that generate data for human review rather than final outputs
 
-**Lukos example:** "I have 3,000 training evaluation records. For each one, extract the date, unit, exercise type, and score, and return them as structured JSON." Flash Lite handles bulk extraction efficiently.
+**Lukos example:** "I have 3,000 training evaluation records. For each one, extract the date, unit, exercise type, and score, and return them as structured JSON." Flash-Lite handles bulk extraction efficiently at the lowest cost point in the family.
+
+### Gemma 4 — Open-Weight, On-Premises Option
+
+**Gemma 4** (released April 2, 2026) is Google's open-weight model family — available for download, self-hosting, and fine-tuning under the Apache 2.0 license. This is significant for Lukos because it means running AI on a classified network or air-gapped environment without sending data to Google's servers.
+
+```{figure} ../images/ch03-gemma4-overview.png
+:alt: Gemma 4 model family overview showing gemma-4-26b-a4b-it MoE and gemma-4-31b-it dense variants, Apache 2.0 license, and use cases for local and secure deployment
+:width: 100%
+
+**Figure 3.11 — Gemma 4 Open-Weight Models.** Two variants — a 26B MoE (sparse, efficient) and a 31B dense model — both available for self-hosting under Apache 2.0. Available in [AI Studio](https://aistudio.google.com) for prototyping; deployable anywhere for production. Full changelog at [ai.google.dev/gemini-api/docs/changelog](https://ai.google.dev/gemini-api/docs/changelog).
+```
+
+Two variants are available:
+- **gemma-4-26b-a4b-it** — 26B parameter Mixture-of-Experts (MoE) architecture. Efficient — only activates a fraction of parameters per token, making it faster and cheaper to run than its parameter count suggests.
+- **gemma-4-31b-it** — 31B parameter dense model. Heavier but more consistent for complex reasoning tasks.
+
+**Lukos applications for Gemma 4:**
+- CUI (Controlled Unclassified Information) processing on a Lukos-controlled server
+- Fine-tuning on Lukos-specific terminology, doctrinal language, and AAR formats
+- Air-gapped environments where no external API call is permitted
+- Reducing dependency on cloud APIs for cost-sensitive high-volume work
+
+**Note:** Gemma 4 is prototypable in [AI Studio](https://aistudio.google.com) before you commit to a self-hosted deployment. Test capability there first.
 
 ### Live Models — Real-Time Voice and Video
 
@@ -380,7 +442,7 @@ This is where AI Studio gets genuinely remarkable for certain Lukos applications
 
 **After-hours study partner:** An analyst doing self-directed professional development can have a live conversation with an AI tutor about doctrine, TTPs, or case studies — much more effective than reading alone.
 
-### Image Models (Imagen / Gemini Image)
+### Image Models — Imagen / Gemini Image
 
 The image generation capability in the Gemini ecosystem — sometimes called **Nano Banana** in Lukos internal shorthand, officially **Imagen** on the Google side — generates high-quality images from text descriptions.
 
@@ -390,9 +452,16 @@ The image generation capability in the Gemini ecosystem — sometimes called **N
 - Exercise materials: "Illustrate a command post setup for a battalion-level training event"
 - Course graphics and instructional materials
 
-### Video — Veo
+### Video — Veo 3.1
 
-**Veo** is Google's text-to-video model. You describe a scene in text; Veo generates a video clip.
+**Veo 3.1** is Google's current text-to-video model. You describe a scene in text; Veo generates a video clip. As of April 2026, Veo 3.1 is available free to all Google accounts — no enterprise plan required.
+
+```{figure} ../images/ch03-veo31-capabilities.png
+:alt: Veo 3.1 video generation workflow showing text prompt to training scenario video, with Lukos use cases: exercise vignettes, scenario visualization, program proposals
+:width: 100%
+
+**Figure 3.12 — Veo 3.1 Capabilities.** From text description to training video in minutes. Free for all Google accounts as of April 2026. Veo 3.1 produces cinematic-quality clips useful for exercise vignettes, scenario illustrations, and capability demonstrations.
+```
 
 **Lukos applications:**
 - Training video prototypes: rapid creation of scenario visualizations without film crews or production budgets
@@ -410,9 +479,9 @@ Note: Veo outputs require review before use in official training materials. The 
 - Multilingual partner support: generate briefings in partner nation languages for distribution
 - Accessibility: ensure training materials are accessible to personnel with reading difficulties
 
-### Music — Lyria
+### Music — Lyria 2
 
-**Lyria** is Google's AI music generation model. It generates original music from text descriptions of style, mood, instrumentation, and tempo.
+**Lyria 2** is Google's current AI music generation model, available on Vertex AI. It generates original music from text descriptions of style, mood, instrumentation, and tempo.
 
 **Lukos applications:**
 - Training video underscores: appropriate background music for exercise documentation and training videos
@@ -431,7 +500,7 @@ Everything you've done in the Prompt tab — setting system instructions, tuning
 :alt: Build tab workflow showing plain English description transforming into a working prototype application
 :width: 100%
 
-**Figure 3.7 — From Description to App.** The Build tab takes your AI configuration and a plain-English description, and produces a working prototype application. No coding required.
+**Figure 3.13 — From Description to App.** The Build tab takes your AI configuration and a plain-English description, and produces a working prototype application. No coding required.
 ```
 
 ### What "Vibe Coding" Means
@@ -468,7 +537,7 @@ An **API key** is a secret string of characters — typically something like `AI
 
 ## 3.6 Lukos Build Ideas Worth Prototyping Today
 
-Theory without application is just vocabulary. Here are three concrete applications you could prototype in AI Studio's Build tab right now, today, with the tools you've already learned in this chapter.
+Theory without application is just vocabulary. Here are three concrete applications you could prototype in [AI Studio's Build tab](https://aistudio.google.com) right now, today, with the tools you've already learned in this chapter.
 
 Each one addresses a real Lukos workflow bottleneck. Each one would take an experienced developer days to build from scratch. In AI Studio, each is a 30-minute prototype.
 
@@ -559,7 +628,7 @@ If the output is generic or casual in tone, check that you pasted the system ins
 
 Now you're going to observe the temperature effect directly.
 
-**Step 1.** In the right panel, find **Temperature.** Note the current setting (likely 1.0 by default). Change it to **0.1**.
+**Step 1.** In the right panel, find **Temperature.** Note the current setting. Change it to **0.1**.
 
 **Step 2.** In the prompt field, type the **exact same question** as Tier 1:
 
@@ -569,15 +638,15 @@ Send it. Read the output.
 
 **Step 3.** Change Temperature to **1.8**. Run the same question again.
 
-**Step 4.** You now have three outputs (the default, 0.1, and 1.8). Compare them using this table — fill it out for each output:
+**Step 4.** You now have two outputs (0.1 and 1.8). Compare them using this table — fill it out for each output:
 
-| | Default (1.0) | Low Temp (0.1) | High Temp (1.8) |
-|---|---|---|---|
-| **Tone** (formal / casual) | | | |
-| **Structure** (consistent / variable) | | | |
-| **Surprising observations** (yes / no) | | | |
-| **J7 brief ready?** (yes / needs edit / no) | | | |
-| **Best use case** | | | |
+| | Low Temp (0.1) | High Temp (1.8) |
+|---|---|---|
+| **Tone** (formal / casual) | | |
+| **Structure** (consistent / variable) | | |
+| **Surprising observations** (yes / no) | | |
+| **J7 brief ready?** (yes / needs edit / no) | | |
+| **Best use case** | | |
 
 **Group discussion (5 minutes):** Which output would you actually use in a J7 briefing? Why? Which output generated something you hadn't thought of before? When would that matter?
 
@@ -588,6 +657,8 @@ You should observe:
 - **At 0.1:** Two (or more) runs of the same prompt produce nearly identical outputs. Formal, precise, structured. Safe for a senior leader audience.
 - **At 1.8:** The output is more expressive and varied. It may suggest unexpected angles. It may also have slightly uneven structure.
 - The table reveals the tradeoff clearly: low temperature for consistency and trust; high temperature for ideation and variety.
+
+**Note:** Temperature ranges from 0 (fully deterministic) to 2 (maximum creativity). The default varies by model; always set it explicitly for mission-relevant work.
 
 If outputs at 0.1 and 1.8 look identical, you may be in a cached-response state. Add a small variation to the prompt ("...in complex terrain environments") to force fresh generation.
 ```
@@ -787,7 +858,7 @@ The prototype may not be perfect — Build tab outputs are intentionally rapid p
 :alt: Full AAR-to-structured-data pipeline flowchart from raw document through AI Studio to Google Sheets database
 :width: 100%
 
-**Figure 3.8 — The Full Pipeline.** From raw AAR document to structured database entries. Each step is executable today with the tools covered in this chapter. This is what operational AI integration looks like — not replacing analysts, but removing the manual bottleneck from the workflow.
+**Figure 3.14 — The Full Pipeline.** From raw AAR document to structured database entries. Each step is executable today with the tools covered in this chapter. This is what operational AI integration looks like — not replacing analysts, but removing the manual bottleneck from the workflow.
 ```
 
 ---
@@ -796,11 +867,11 @@ The prototype may not be perfect — Build tab outputs are intentionally rapid p
 
 The bench is set up. Let's inventory what you built.
 
-**AI Studio is the gunsmith's bench** — the place where you configure AI tools before they deploy. Free to start, early access to the newest capabilities, and the bridge from individual experimentation to team-wide deployment.
+**AI Studio is the gunsmith's bench** — the place where you configure AI tools before they deploy. Free to start, early access to the newest capabilities, and the bridge from individual experimentation to team-wide deployment. Access it at [aistudio.google.com](https://aistudio.google.com).
 
 **The four knobs** are the configuration layer:
 - **System Instructions** set the standing orders — who the AI is, what format it uses, what it never does. Set these once; they persist for every message.
-- **Temperature** controls creative latitude — under 0.3 for analytical precision, 0.7+ for generative brainstorming.
+- **Temperature** controls creative latitude — ranges from 0 (deterministic) to 2 (maximum creative). Under 0.3 for analytical precision, 0.7+ for generative brainstorming.
 - **Thinking Level** controls reasoning depth — Medium for most work, High for complex synthesis going to decision-makers.
 - **Top-P** you leave alone unless you're a production ML engineer.
 
@@ -810,10 +881,14 @@ The bench is set up. Let's inventory what you built.
 - **Grounding with Google Search** provides current information with citations
 - **URL Context** reads specific documents on command
 
-**The model carousel** matches capability to task:
-- Pro for complex synthesis, Flash for volume and latency, Flash Lite for bulk classification
-- Live models for real-time voice and video interactions
-- Imagen, Veo, TTS, and Lyria for visual, video, audio, and music outputs
+**The model carousel** matches capability to task. Current models as of April 2026 (see [ai.google.dev/gemini-api/docs/models](https://ai.google.dev/gemini-api/docs/models) for updates):
+- **Gemini 3.1 Pro** (Preview) for the hardest analytical work — deepest reasoning, highest accuracy
+- **Gemini 3 Pro** (GA) for production-grade accuracy at scale
+- **Gemini 3 Flash** for the daily driver — GPQA 90.4%, $0.50/1M tokens, fast
+- **Gemini 3.1 Flash-Lite** (Preview) for bulk classification at $0.25/1M tokens
+- **Gemma 4** (Apache 2.0) for self-hosted, air-gapped, or fine-tuned deployments
+- **Gemini Live** for real-time voice and video interactions
+- **Imagen, Veo 3.1, TTS, and Lyria 2** for visual, video, audio, and music outputs
 
 **The Build tab** is where analysts become builders. Plain-English descriptions become working prototype applications in under 30 minutes, no coding required.
 
@@ -834,5 +909,5 @@ The bench is set up. Let's inventory what you built.
 
 3. **Save your System Instruction** — Take the Lukos Lessons Learned system instruction from this chapter and save it somewhere you can reuse it. It's the foundation for multiple workflows in the chapters ahead.
 
-**In Chapter 4:** We go deeper — NotebookLM, the AI research partner that lets you interrogate your own document library. Upload your institutional knowledge; ask it anything.
+**In Chapter 4:** We go deeper — [NotebookLM](https://notebooklm.google.com), the AI research partner that lets you interrogate your own document library. Upload your institutional knowledge; ask it anything.
 ```
