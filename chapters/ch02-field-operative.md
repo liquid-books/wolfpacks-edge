@@ -21,25 +21,48 @@ Let's begin.
 
 Before you open the app, get one thing straight. "Gemini" is actually three different things, and people conflate them constantly. Knowing the difference matters for how you work.
 
-**Thing 1: Gemini Models** — The underlying AI models: Gemini 2.5 Pro, Gemini 2.5 Flash, Gemini 2.0 Flash, and so on. These are the intelligence engines — the actual trained neural networks that process your prompts. Different models have different capabilities, speeds, and costs. Chapter 1 covered the landscape.
+**Thing 1: Gemini Models** — The underlying AI models: [Gemini 3.1 Pro](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/), Gemini 3 Pro, Gemini 3 Flash, Gemini 3.1 Flash-Lite, and so on. These are the intelligence engines — the actual trained neural networks that process your prompts. Different models have different capabilities, speeds, and costs. Chapter 1 covered the landscape.
 
-**Thing 2: Gemini App** — The consumer-facing chat interface at **gemini.google.com**. This is where you'll spend most of your time in this chapter. It's the field operative's interface — clean, conversational, and purpose-built for working professionals. Free tier available; Google One AI Pro subscription unlocks the full model suite and larger context windows.
+**Thing 2: Gemini App** — The consumer-facing chat interface at **[gemini.google.com](https://gemini.google.com)**. This is where you'll spend most of your time in this chapter. It's the field operative's interface — clean, conversational, and purpose-built for working professionals. Free tier available; Google AI Pro subscription unlocks the full model suite and larger context windows.
 
-**Thing 3: Gemini API** — The programmatic access layer used by developers to build applications. This is what AI Studio and Vertex plug into. You'll touch the API in Chapter 3 and Chapter 5. For now, you're in the app.
+**Thing 3: Gemini API** — The programmatic access layer used by developers to build applications. This is what [AI Studio](https://aistudio.google.com) and Vertex plug into. You'll touch the API in Chapter 3 and Chapter 5. For now, you're in the app.
 
 ### Subscription Tiers: What Lukos Practitioners Actually Need
 
+```{figure} ../images/ch02-free-vs-pro-vs-ultra.png
+:name: ch02-tier-comparison
+:alt: Gemini subscription tier comparison — Free, Google AI Pro, Google AI Ultra
+Gemini subscription tiers. Google AI Pro at ~$20/month is the operational standard for Lukos practitioners.
+```
+
 | Tier | Cost | What You Get | Right For |
 |------|------|-------------|-----------|
-| **Free** | $0/mo | Gemini 2.0 Flash access, limited usage | Getting started, low-volume |
-| **AI Pro** | ~$20/mo | Gemini 2.5 Pro full access, 1M context, Gems, Deep Research | Primary daily use — this is the tier |
-| **AI Ultra** | ~$250/mo | Highest-priority access, early features, extended limits | Power users, heavy API workflows |
+| **Free** | $0/mo | Gemini 3 Flash access, limited usage | Getting started, low-volume |
+| **Google AI Pro** | ~$20/mo | Gemini 3.1 Pro full access, 1M context, Gems, Deep Research | Primary daily use — **this is the tier** |
+| **Google AI Ultra** | ~$250/mo | Highest-priority access, early features, extended limits | Power users, heavy API workflows |
 
-**The recommendation for Lukos:** AI Pro at $20/month is the tier. It unlocks Gemini 2.5 Pro with the full million-token context window, Gems, Deep Research, and enough capacity for all the workflows in this book. The ROI is immediate.
+**The recommendation for Lukos:** Google AI Pro at $20/month is the tier. It unlocks [Gemini 3.1 Pro](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/) with the full million-token context window, Gems, Deep Research, and enough capacity for all the workflows in this book. The ROI is immediate.
+
+### Current Gemini Model Reference (April 2026)
+
+| Model | Release | Speed | Cost | Best For |
+|-------|---------|-------|------|---------|
+| **Gemini 3.1 Pro** | Feb 2026 | Moderate | Premium | Complex reasoning, 1M context (Preview) |
+| **Gemini 3 Pro** | Nov 2025 | Moderate | Mid | Production workloads, GA |
+| **Gemini 3 Flash** | Dec 2025 | Fast | $0.50/1M | High-volume tasks, GPQA 90.4% |
+| **Gemini 3.1 Flash-Lite** | Mar 2026 | Fastest | $0.25/1M | Volume automation |
+
+**Default for Lukos work:** Gemini 3.1 Pro (when on AI Pro) or Gemini 3 Pro for GA stability.
 
 ### A Tour of the Interface
 
 Open **[gemini.google.com](https://gemini.google.com)** and sign in. Here's what you're looking at:
+
+```{figure} ../images/ch02-gemini-interface-tour.png
+:name: ch02-interface-tour
+:alt: Annotated tour of the Gemini app interface
+The Gemini app interface. Key areas: left sidebar (Gems, Recent Chats), main chat window, Canvas panel, Deep Research mode, and model selector.
+```
 
 **Left Sidebar:**
 - *Gems* — Your saved AI personas (we'll build these in Section 2.5)
@@ -52,7 +75,7 @@ Open **[gemini.google.com](https://gemini.google.com)** and sign in. Here's what
 - *Deep Research* — A specialized mode where Gemini spends several minutes doing multi-source web research before responding (powerful for landscape assessments)
 
 **Top-right menu:**
-- *Model selector* — Switch between Gemini versions; default to 2.5 Pro for Lukos work
+- *Model selector* — Switch between Gemini versions; default to Gemini 3.1 Pro for Lukos work
 - *File upload* — Attach PDFs, documents, images, spreadsheets; the model reads them in context
 
 **Bottom input bar:**
@@ -60,18 +83,30 @@ Open **[gemini.google.com](https://gemini.google.com)** and sign in. Here's what
 - Microphone icon — In-browser voice input (basic; see the next section for the better solution)
 - File attachment icon — Upload documents directly into the prompt
 
+```{figure} ../images/ch02-canvas-deep-research.png
+:name: ch02-canvas-deep-research
+:alt: Gemini Canvas and Deep Research surfaces
+Canvas (left) renders and edits documents in real-time. Deep Research (right) runs multi-source web synthesis over several minutes — powerful for landscape assessments and capability reviews.
+```
+
 ---
 
 ```{admonition} ⚡ Field Upgrade: Stop Typing Your Prompts
 :class: important
 
-**WisprFlow.ai — dictate to any AI tool, at full professional speed**
+**[WisprFlow.ai](https://wisprflow.ai) — dictate to any AI tool, at full professional speed**
 
 Here's the operational reality: the prompts that produce elite AI output (Role + Context + Task, richly specified) are long. A high-quality Lessons Learned synthesis prompt might be 300 words. Typing that every time is friction that kills adoption.
 
 **The solution:** [WisprFlow.ai](https://wisprflow.ai) lets you dictate your prompts — and it transcribes at 150+ words per minute, with punctuation, formatting, and AI cleanup. You speak your full prompt, it appears in the input field, and you hit Enter. The briefing takes 90 seconds instead of 10 minutes.
 
 **Why this matters for Lukos:** The analysts, ORSAs, and program managers on this team are fluent in mission language. They can *say* a precise, context-rich prompt in 60 seconds. The bottleneck is typing it. Remove that bottleneck.
+
+```{figure} ../images/ch02-wisprflow-setup.png
+:name: ch02-wisprflow-setup
+:alt: WisprFlow installation and hotkey setup
+WisprFlow setup. Download from wisprflow.ai → install → set Fn+Fn hotkey → dictate directly into any AI prompt field at 150+ WPM.
+```
 
 **Step-by-Step Install (Mac and Windows):**
 
@@ -80,7 +115,7 @@ Here's the operational reality: the prompts that produce elite AI output (Role +
 3. Install the application (standard install process; no special permissions required beyond microphone access)
 4. On first launch, WisprFlow will ask for microphone permission — grant it
 5. Set up your activation shortcut: WisprFlow recommends **Fn + Fn** (double-tap Function key) — this works system-wide
-6. Open gemini.google.com and click in the prompt field
+6. Open [gemini.google.com](https://gemini.google.com) and click in the prompt field
 7. Double-tap your activation key — a small WisprFlow indicator will appear
 8. Speak your prompt naturally: *"You are a senior Lessons Learned analyst supporting USSOCOM. I'm going to give you an after-action review. Your task is to identify the top three systemic lessons and for each one provide a direct statement of the issue, the operational impact, and a recommended follow-on action. Format your output as a professional memo suitable for J7 distribution."*
 9. Pause for one second. WisprFlow transcribes and cleans up the text.
@@ -157,6 +192,12 @@ Here's where things get significantly more powerful.
 
 In Chapter 1, we established that the Role component of a prompt primes the model's entire approach. Now let's understand *why* that's true — and how to exploit it fully.
 
+```{figure} ../images/ch02-persona-power.png
+:name: ch02-persona-power
+:alt: Same question, dramatically different outputs depending on persona
+The persona effect. Left: generic assistant response — helpful but bland. Right: retired SF officer with doctorate in organizational learning — operationally specific, grounded, and immediately usable.
+```
+
 Imagine you ask the same question to two different people:
 
 **Person A:** "An assistant."
@@ -168,6 +209,12 @@ The question: *"What's the most important thing a unit can do to improve its les
 Person A gives you a generic, helpful answer. Person B gives you a specific, operationally-grounded answer that reflects hard-won field experience, organizational dynamics, and SOF-specific constraints.
 
 The AI model has absorbed the writing, thinking, and voice of *both* of those people from its training data. When you specify the role, you're telling the model which frame to operate from. This is not a trick. It's a genuine calibration of the model's response generation.
+
+```{figure} ../images/ch02-prompt-quality-spectrum.png
+:name: ch02-prompt-quality-spectrum
+:alt: Spectrum from lazy prompt to fully engineered prompt
+The prompt quality spectrum. A one-line request yields generic output. A fully engineered prompt — Role + Context + Task + Format + Constraints — yields production-ready professional output.
+```
 
 ### The Persona Template
 
@@ -187,7 +234,13 @@ Let's build the full Lukos Persona Library.
 
 ## 2.4 The Lukos Persona Library
 
-These are your seven primary personas. Copy them directly into Gemini, AI Studio, or a Gem. Each one has been written to produce Lukos-quality output for that functional area.
+```{figure} ../images/ch02-persona-library.png
+:name: ch02-persona-library
+:alt: The 7 Lukos personas as a visual directory
+The Lukos Persona Library — seven purpose-built AI personas for Lukos functional areas. Each is calibrated for a specific professional domain and audience.
+```
+
+These are your seven primary personas. Copy them directly into [Gemini](https://gemini.google.com), [AI Studio](https://aistudio.google.com), or a Gem. Each one has been written to produce Lukos-quality output for that functional area.
 
 ### Persona 1: The Lessons Learned Analyst
 
@@ -378,6 +431,12 @@ Here's a technique that will feel counterintuitive until you try it — and then
 
 This is **meta-prompting**: using AI to generate better AI prompts.
 
+```{figure} ../images/ch02-meta-prompt-workflow.png
+:name: ch02-meta-prompt-workflow
+:alt: Two-step meta-prompt process flow
+The meta-prompt workflow. Step 1: Ask the AI to write the optimal prompt for your task (45 seconds). Step 2: Run that generated prompt against your real data (30 seconds). The output quality gap between skipping Step 1 and using it is significant.
+```
+
 ### The Core Move
 
 Instead of:
@@ -426,11 +485,17 @@ The difference is the meta-prompt. You now have a production tool that was gener
 
 ## 2.6 Gems: Your Personal Pack of Specialists
 
-A **Gem** is a saved AI configuration — a persona, task specification, and optional knowledge base bundled into a reusable tool. Instead of typing your full persona and context every time you open Gemini, you click on your Gem and it's already briefed.
+A **Gem** is a saved AI configuration — a persona, task specification, and optional knowledge base bundled into a reusable tool. Instead of typing your full persona and context every time you open [Gemini](https://gemini.google.com), you click on your Gem and it's already briefed.
 
 Think of Gems as your permanent team of AI specialists. Your Lessons Learned Analyst Gem knows exactly how to approach AAR synthesis. Your Acquisition Gem knows the FAR. Your ORSA Gem knows to distinguish descriptive from inferential statistics. You configure them once; they work for you every session after that.
 
 ### The Four Pillars of a Gem
+
+```{figure} ../images/ch02-gem-anatomy.png
+:name: ch02-gem-anatomy
+:alt: The four pillars of a Gem — Persona, Task, Context, Format
+The four pillars of every effective Gem. Persona defines who the AI is. Task specifies what this Gem does. Context provides persistent background. Format controls how outputs appear. Knowledge Files (optional) give the Gem permanent document access.
+```
 
 Every Gem is built on four elements:
 
@@ -447,6 +512,12 @@ And optionally:
 **Knowledge Files** — PDFs or documents uploaded directly to the Gem. The Gem can reference these in every conversation without you uploading them each time. Upload your organization's LL taxonomy, your program's SOW, your unit's AAR template — and the Gem has permanent access.
 
 ### How to Build a Gem: Step by Step
+
+```{figure} ../images/ch02-gem-builder-steps.png
+:name: ch02-gem-builder-steps
+:alt: Step-by-step Gem creation walkthrough in Gemini
+Building a Gem in 10 steps. The process takes about 10 minutes for your first Gem — and the Gem works for you every session after that.
+```
 
 ```{admonition} Step-by-Step: Creating Your First Gem
 :class: note
@@ -485,6 +556,12 @@ And optionally:
 ---
 
 ## 2.7 The Lukos Gem Library — What to Build First
+
+```{figure} ../images/ch02-lukos-gem-library.png
+:name: ch02-lukos-gem-library
+:alt: The 5 starter Gems as a visual card grid
+The Lukos Gem Library — five production-ready Gems covering the core Lukos functional areas. Paste the instructions directly into Gemini.
+```
 
 These are the five highest-value Gems for Lukos workflows. Full instructions follow — these are production-ready; paste directly into the Instructions field.
 
@@ -770,6 +847,12 @@ CONSTRAINTS:
 
 Gems can be shared — Gemini provides a shareable link. This is powerful for team standardization (everyone on the LL team uses the same LL Analyst Gem) but comes with considerations.
 
+```{figure} ../images/ch02-opsec-gems.png
+:name: ch02-opsec-gems
+:alt: OPSEC diagram — what gets exposed when sharing a Gem
+The Gem sharing OPSEC model. Persona instructions, task specs, and format templates are safe to share. Knowledge files containing sensitive content, PII, or non-public program data must never be embedded.
+```
+
 ### What Gets Exposed When You Share
 
 When you share a Gem link:
@@ -793,80 +876,214 @@ The Gem instructions themselves should be written so that they work with any con
 
 ---
 
-## 2.9 Hands-On: The Persona Bake-Off (Group Exercise)
+## 2.9 Hands-On Labs
 
-```{admonition} Group Activity — 20 minutes
+### Lab 1: The Persona Bake-Off
+
+```{admonition} 🎯 Tier 1 — On-Ramp (5 minutes)
 :class: note
 
-**Goal:** Experience the difference that persona selection makes on output quality. Build team agreement on which personas work best for which tasks.
+**Goal:** Experience the persona effect firsthand in 5 minutes.
+
+**Action:**
+1. Open **[gemini.google.com](https://gemini.google.com)** in a new chat — no persona, blank start.
+2. Type this prompt exactly: *"What is the most important thing a unit can do to improve its lessons learned outcomes?"*
+3. Read the response. Note its tone, depth, and specificity.
+4. Open a **second** new chat. Paste Persona 1 (The Lessons Learned Analyst from Section 2.4) at the top.
+5. Submit the exact same question.
+6. Compare.
+
+✅ **Success looks like:** The second response is noticeably more specific — it references AAR facilitation methodology, JLLIS, organizational patterns, or J7-relevant framing. The first response is helpful but generic. You've just seen the persona effect with your own eyes.
+```
+
+```{admonition} 🎯 Tier 2 — Core Rep (15 minutes)
+:class: note
+
+**Goal:** Run the Persona Bake-Off as a team exercise and reach group consensus on which persona fits which task.
 
 **Step 1:** Designate one person per persona. Each person opens **[gemini.google.com](https://gemini.google.com)** in a new chat.
 
-**Step 2:** Each person pastes one of the following personas from Section 2.4 at the start of their chat (assign different personas to different participants):
+**Step 2:** Each person pastes one of the following personas from Section 2.4 at the start of their chat:
 - Persona 1: The Lessons Learned Analyst
 - Persona 3: The Senior NCO Mentor
 - Persona 7: The ORSA
 
-**Step 3:** All participants then type the SAME prompt (put it on the shared screen):
+**Step 3:** All participants submit the SAME prompt simultaneously:
 
 > *"Our team has just completed a 3-day joint training exercise with a partner nation unit. Attendance was strong. The training scenarios were realistic. However, the post-exercise debrief revealed that several U.S. personnel were unfamiliar with the partner nation's command and control procedures, which caused coordination friction during the capstone scenario. What is your top recommendation for addressing this before the next exercise?"*
 
-**Step 4:** Everyone submits at the same time. Read the outputs individually.
+**Step 4:** Share screens and read all three outputs together.
 
-**Step 5:** Share screens (or read aloud). As a group:
+**Step 5:** Group discussion:
 - What was different about each response?
 - Which response would you actually use — and for which audience?
-- What does this tell you about how persona selection changes the output?
+- Which persona would you reach for first in your own role?
 
-**Debrief:** The recommendation is that the LL Analyst surfaces a systemic pattern and process fix. The NCO Mentor gives actionable guidance for the team leader on the ground. The ORSA asks about data and measurement. Same question. Three completely different — and equally valid — professional responses. The persona is not cosmetic. It changes the model's entire analytical frame.
+✅ **Success looks like:** The LL Analyst surfaces a systemic pattern and process fix. The NCO Mentor gives actionable ground-level guidance. The ORSA asks about measurement and data. The group identifies which persona serves which stakeholder. These differences are significant, not cosmetic.
 ```
 
----
-
-## 2.10 Hands-On: Build Your First Gem (Individual Exercise)
-
-```{admonition} Individual Activity — 15 minutes
+```{admonition} 🎯 Tier 3 — WOW Moment (25–30 minutes)
 :class: note
 
-**Goal:** Configure and save your first working Gem in Gemini.
+**Goal:** Build a working persona-powered Gem that performs real Lukos LL work — something you'll actually use after class.
 
-**Step 1:** Go to **[gemini.google.com](https://gemini.google.com)** and sign in.
+**Step 1:** Choose the Gem most relevant to your functional role from Section 2.7.
 
-**Step 2:** In the left sidebar, click **"Gems"**.
+**Step 2:** Go to **[gemini.google.com](https://gemini.google.com)** → left sidebar → **Gems** → **New Gem**.
 
-**Step 3:** Click **"New Gem"** or the **+** icon.
+**Step 3:** Name it. Paste the full Gem instructions from Section 2.7.
 
-**Step 4:** In the **Name** field, type the name of the Gem most relevant to your role:
-- If you work on Lessons Learned: `Lukos LL First-Pass Reader`
-- If you work on acquisition: `FAR/DFARS Plain-English Translator`
-- If you work on training: `Training Evaluation Aggregator`
-- If you work with foreign partners: `Foreign Partner Engagement Summarizer`
-- If you work in experimentation: `J7 Experimentation Note-Taker`
+**Step 4:** Find a real work artifact — a sanitized AAR excerpt, meeting notes, a draft document, or sample feedback. (If nothing is at hand, use the sample AAR in Appendix B.)
 
-**Step 5:** Copy the full Gem text from Section 2.7 that matches your choice. Paste it into the **Instructions** field.
+**Step 5:** In the Preview panel, submit your real content to the Gem. Read the output.
 
-**Step 6:** In the **Preview** panel on the right, test your Gem with a real work example:
-- LL Reader: paste a sanitized AAR excerpt (3-4 paragraphs)
-- FAR Translator: type "Explain FAR 52.204-21 in plain English"
-- Training Aggregator: paste some sample student feedback
-- Foreign Partner Summarizer: paste rough notes from a meeting
-- Experimentation Note-Taker: paste bullet points from a working group
+**Step 6:** Ask yourself the validation question: *"Would I send this to a colleague or client after a 2-minute review?"*
+- If yes: Save the Gem. You're done.
+- If not quite: Edit one instruction in the Gem and re-test. Most issues resolve in one edit cycle.
 
-**Step 7:** Read the output. Ask yourself:
-- Is the persona coming through?
-- Is the format correct?
-- Would you send this output to a colleague or client after a 2-minute review?
+**Step 7:** Save. Share the Gem link with your team lead.
 
-**Step 8:** If something's off, edit the Instructions — add a specific constraint, adjust the format, sharpen the task description. Re-test.
-
-**Step 9:** Click **Save**. Your Gem is live.
-
-**Step 10:** For the rest of the course — and after — use this Gem instead of a blank chat for all work in its domain. The Gem is always briefed. You are never starting from zero again.
+✅ **Success looks like:** You have a saved Gem in your Gemini sidebar that produces professional, J7-quality outputs for your functional area. You ran it against real content and the output met or exceeded the "2-minute review" standard. You have a permanent AI team member, configured and ready.
 ```
 
 ---
 
-## 2.11 Hands-On: The Meta-Prompt Sprint (Individual Exercise)
+### Lab 2: Build Your First Gem
+
+```{admonition} 🎯 Tier 1 — On-Ramp (5 minutes)
+:class: note
+
+**Goal:** Get a working Gem configured and saved in 5 minutes.
+
+**Action:**
+1. Go to **[gemini.google.com](https://gemini.google.com)** → left sidebar → **Gems** → **New Gem**
+2. Name: `Lukos LL First-Pass Reader`
+3. Copy-paste Gem 1 instructions from Section 2.7 into the Instructions field
+4. In the Preview panel, type: *"Test entry: After a joint planning session, the team noted that communication between U.S. and partner nation staff broke down during the coordination phase due to unclear roles."*
+5. Click Save.
+
+✅ **Success looks like:** The Gem produces a structured output with Lesson Statement, Functional Code (Command and Control or Interoperability), Severity assessment, Recurrence Assessment, and Follow-On Action — all from your test entry. The Gem appears in your sidebar.
+```
+
+```{admonition} 🎯 Tier 2 — Core Rep (15 minutes)
+:class: note
+
+**Goal:** Configure the Gem for your actual functional area and test it against real content.
+
+**Step 1:** Identify which Gem from Section 2.7 best matches your role:
+- LL work → Gem 1 (LL First-Pass Reader)
+- Acquisition → Gem 3 (FAR/DFARS Translator)
+- Training → Gem 5 (Training Evaluation Aggregator)
+- Foreign partners → Gem 4 (Foreign Partner Engagement Summarizer)
+- Experimentation → Gem 2 (J7 Experimentation Note-Taker)
+
+**Step 2:** Create the Gem with your chosen instructions.
+
+**Step 3:** Test with a real sanitized work sample:
+- For LL: paste a 3-4 paragraph AAR excerpt
+- For FAR: type "Explain FAR 52.204-21 in plain English"
+- For Training: paste sample student feedback (can be fictional but realistic)
+- For Foreign Partners: paste rough notes from a meeting scenario
+- For Experimentation: paste a short working group bullet list
+
+**Step 4:** Read the output carefully. Would you use this directly?
+
+✅ **Success looks like:** The Gem produces output you'd actually use — professional format, correct domain language, appropriate structure. You've identified at least one instruction tweak you want to make, made it, and re-tested.
+```
+
+```{admonition} 🎯 Tier 3 — WOW Moment (25–30 minutes)
+:class: note
+
+**Goal:** Add a Knowledge File to your Gem and experience the power of persistent organizational context.
+
+**Step 1:** Gather one organizational reference document — your unit's AAR template, your program's LL taxonomy, your organization's SOW structure, or any standing reference that applies to your Gem's work. (If nothing is available, download the Lukos AAR Template from Appendix C.)
+
+**Step 2:** In your saved Gem, click **Edit** → **Add files** in the Knowledge section.
+
+**Step 3:** Upload the document.
+
+**Step 4:** In the Instructions field, add one sentence at the end: *"Reference the uploaded [document name] when formatting outputs and assessing alignment with organizational standards."*
+
+**Step 5:** Re-test with your real content. Compare the output to your Tier 2 test — does the Gem now align its output to your organizational template?
+
+**Step 6:** Run three consecutive real work items through the Gem without modification. Evaluate: is this production-ready?
+
+✅ **Success looks like:** Your Gem produces outputs that align to your organizational template without prompting. You've run three real items through it. The output quality is consistent. You have a Gem you'll actually open tomorrow morning instead of a blank chat.
+```
+
+---
+
+### Lab 3: The Meta-Prompt Sprint
+
+```{admonition} 🎯 Tier 1 — On-Ramp (5 minutes)
+:class: note
+
+**Goal:** Experience meta-prompting in one shot — generate a better prompt in 2 minutes than you'd write in 10.
+
+**Action:**
+1. Open **[gemini.google.com](https://gemini.google.com)** in a new chat.
+2. Paste this exactly:
+
+> *"You are an expert AI prompt engineer for defense and government professional services. Write me the best possible prompt for this task: summarize a set of Lessons Learned entries and identify the top three recurring themes. Make it production-ready."*
+
+3. Read what Gemini produces.
+4. Open a second chat. Paste the generated prompt. Add two sample AAR sentences below it.
+5. Compare the output to what you'd get from just typing "Summarize these LL entries."
+
+✅ **Success looks like:** The meta-prompt produces a multi-paragraph, structured prompt with role assignment, output format, and constraints. When you run it against content, the output quality is visibly superior to a plain one-liner. You've seen the technique work in under 5 minutes.
+```
+
+```{admonition} 🎯 Tier 2 — Core Rep (15 minutes)
+:class: note
+
+**Goal:** Generate a production prompt for your most repetitive actual work task.
+
+**Step 1:** In one sentence, write your most repetitive AI task. Examples:
+- "Convert working group notes into a structured meeting summary"
+- "Review a draft SOW for completeness and flag gaps"
+- "Synthesize partner nation engagement notes into a leadership brief"
+
+**Step 2:** Open **[gemini.google.com](https://gemini.google.com)** — new chat.
+
+**Step 3:** Paste this meta-prompt with your task filled in:
+
+> *"You are the world's leading expert on AI prompt engineering for U.S. special operations support and defense professional services. I need to write a production-ready prompt that will do the following: [YOUR TASK]. The user works for Lukos Group supporting USSOCOM. Output goes into professional program documentation.*
+>
+> *Write the optimal prompt. Include: role assignment, context framing, task instructions, output format, and anti-hallucination constraints. Paste-and-use, no modification required."*
+
+**Step 4:** Take the generated prompt. Open a new chat. Paste it. Add your real content. Submit.
+
+**Step 5:** Review. Would you send this output?
+
+✅ **Success looks like:** You have a generated prompt that you've tested against real content and that produces output you'd use with minimal editing. Save this prompt in a personal prompt library document.
+```
+
+```{admonition} 🎯 Tier 3 — WOW Moment (25–30 minutes)
+:class: note
+
+**Goal:** Build a personal Prompt Library — 3 production prompts for your 3 most common Lukos tasks.
+
+**Step 1:** Identify your top 3 repetitive AI tasks in your role.
+
+**Step 2:** For each task, run the meta-prompt from Tier 2.
+
+**Step 3:** Test each generated prompt against real content.
+
+**Step 4:** Create a document titled `Lukos Prompt Library — [Your Name]` with three sections, one per task:
+- Task description (one sentence)
+- The generated production prompt
+- Notes on when to use it and any optional parameters
+
+**Step 5:** Save this document somewhere accessible — your Gem's knowledge files, your shared drive, or a personal notes app.
+
+**Step 6:** Share your best prompt with one teammate. Have them test it against their own content. Does it work for them?
+
+✅ **Success looks like:** You have a document with 3 tested, production-quality prompts for your most common work tasks. You've shared at least one with a teammate who confirmed it works. This is your personal AI toolkit — the foundation of your Gem library.
+```
+
+---
+
+## 2.10 Hands-On: The Meta-Prompt Sprint (Individual Exercise)
 
 ```{admonition} Individual Activity — 10 minutes
 :class: note
@@ -953,9 +1170,9 @@ The Gems in Section 2.7 are your starting templates. They will improve through u
 
 **BLUF — Five things to walk away with:**
 
-1. **Three Things Are Not the Same:** Gemini models (the intelligence) ≠ Gemini App (the interface at gemini.google.com) ≠ Gemini API (the developer layer). Know which one you're working with.
+1. **Three Things Are Not the Same:** Gemini models (the intelligence) ≠ Gemini App (the interface at [gemini.google.com](https://gemini.google.com)) ≠ Gemini API (the developer layer). Know which one you're working with.
 
-2. **WisprFlow removes the typing bottleneck.** Dictate your full, rich prompts at 150+ WPM. Install it before you leave class. Your prompting quality goes up when friction goes down.
+2. **[WisprFlow](https://wisprflow.ai) removes the typing bottleneck.** Dictate your full, rich prompts at 150+ WPM. Install it before you leave class. Your prompting quality goes up when friction goes down.
 
 3. **Persona changes everything.** The same question to a generic assistant vs. a retired SF officer with a doctorate in organizational learning produces wildly different outputs. Use the Lukos Persona Library — it's in Appendix A, ready to paste.
 
@@ -965,5 +1182,5 @@ The Gems in Section 2.7 are your starting templates. They will improve through u
 
 **The Lukos Application:** Your LL program's first-pass synthesis workflow, your working group documentation, your foreign partner briefs — all of these can be Gem-supported by end of week. That's what this chapter delivers.
 
-**Next:** Chapter 3 — The Workshop. We take your Gems into AI Studio and build the next layer: structured prompts, multi-turn conversations, and the beginning of automated workflows.
+**Next:** Chapter 3 — The Workshop. We take your Gems into [AI Studio](https://aistudio.google.com) and build the next layer: structured prompts, multi-turn conversations, and the beginning of automated workflows.
 ```
