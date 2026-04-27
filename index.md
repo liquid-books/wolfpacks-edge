@@ -175,6 +175,14 @@ Chapter 10 covers AI at the edge: offline deployment on isolated or air-gapped n
 
 ---
 
+## 📚 Resources
+
+| Resource | Link |
+|----------|------|
+| **Course NotebookLM** — AI-powered companion for this book. Ask it questions, explore topics, and generate audio overviews. | **[→ Open NotebookLM](https://notebooklm.google.com/notebook/a146284c-2755-42df-86b0-e4c712a49474)** |
+
+---
+
 ::::{figure} images/lukos-15year.png
 :alt: Lukos — 15 Years Leading the Pack
 :width: 180px
@@ -186,3 +194,4 @@ Chapter 10 covers AI at the edge: offline deployment on isolated or air-gapped n
 ---
 
 *The pack is waiting. Let's move.*
+
