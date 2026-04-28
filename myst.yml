@@ -79,6 +79,8 @@ project:
         - file: chapters/add-b-readiness-gap.md
         - file: chapters/add-c-mermaid.md
         - file: chapters/add-d-value-creation.md
+        - file: chapters/add-e-high-value-tutorials.md
+          title: "Add. E: High-Value Tutorials and Use Cases"
 
     - title: "Appendices"
       children:
